@@ -1,0 +1,20 @@
+{
+  "siteName": "SPECTRE DEFEND",
+  "tagline": "Autonomous Cyber Defense & Zero-Trust Intelligence",
+  "siteUrl": "https://spectredefend.com",
+  "logoText": "SPECTRE DEFEND",
+  "logoImage": "",
+  "favicon": "/favicon.svg",
+  "appleTouchIcon": "/apple-touch-icon.svg",
+  "ogImage": "/images/og-spectre-defend.jpg",
+  "contactEmail": "defense@spectredefend.com",
+  "contactPhone": "[REQUIRES BUSINESS CONFIRMATION]",
+  "address": "[REQUIRES BUSINESS CONFIRMATION]",
+  "socialLinks": {
+    "twitter": "https://twitter.com/spectredefend",
+    "github": "https://github.com/spectredefend",
+    "linkedin": "https://linkedin.com/company/spectredefend",
+    "discord": "https://discord.gg/spectredefend"
+  },
+  "operationalStatus": "Autonomous Threat Interception Active • Continuous Telemetry Monitoring"
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Cookie Policy",
+  "slug": "cookie-policy",
+  "lastUpdated": "September 21, 2026",
+  "effectiveDate": "September 21, 2026",
+  "summary": "This Cookie Policy explains how SPECTRE DEFEND utilizes cookies and client-side storage technologies on spectredefend.com. We do not use third-party tracking or advertising cookies.",
+  "sections": [
+    {
+      "heading": "1. What Are Cookies and Storage Technologies?",
+      "content": "Cookies are small text files placed on your device by websites you visit. They are widely used to ensure websites function securely and efficiently. Similar technologies include browser local storage (localStorage) and session cookies."
+    },
+    {
+      "heading": "2. Our Approach to Cookies & Tracking",
+      "content": "SPECTRE DEFEND strictly minimizes tracking:\n\n• No Advertising or Tracking Cookies: We do not deploy third-party advertising cookies, cross-site tracking pixels, or behavioral profiling tools.\n• No Third-Party Analytics: We do not load Google Analytics, Meta/Facebook Pixel, or commercial marketing trackers on this website.\n• Minimal Necessary Storage: We use only strictly necessary storage mechanisms required for essential security, administrative authentication, and saving your preferences."
+    },
+    {
+      "heading": "3. Complete Inventory of Cookies and Storage Keys",
+      "content": "The following is the exhaustive inventory of storage technologies used across our domain:\n\n1. cookie_consent_preferences\n• Category: Strictly Necessary / Preference\n• Type: Browser localStorage\n• Purpose: Stores your cookie preference selection so that you are not repeatedly prompted on subsequent page visits.\n• Duration: Persistent until browser storage is cleared.\n\n2. oauth_state\n• Category: Strictly Necessary / Security\n• Type: HTTP-only, Secure Cookie (SameSite=Lax)\n• Host: auth.spectredefend.com (Cloudflare Worker)\n• Purpose: Cryptographic CSRF state token used during GitHub OAuth authentication for authorized content editors accessing the Decap CMS portal (/admin/).\n• Duration: 10 minutes.\n\n3. decap-cms-user\n• Category: Strictly Necessary / Operational\n• Type: Browser localStorage\n• Host: spectredefend.com/admin/\n• Purpose: Stores encrypted session credentials for authenticated content editors editing site markdown files via GitHub API.\n• Duration: Persistent until explicit logout."
+    },
+    {
+      "heading": "4. Managing and Disabling Cookies",
+      "content": "You can control and manage storage technologies in several ways:\n\n• On-Site Preference Center: You can view and update your cookie preferences at any time by clicking \"Cookie Settings\" in the website footer.\n• Browser Controls: Most web browsers allow you to manage cookie settings, delete existing cookies, and block new cookies through their settings/preferences menu. Please note that disabling strictly necessary cookies may prevent administrative logins to the CMS portal (/admin/)."
+    },
+    {
+      "heading": "5. Policy Updates and Contact Information",
+      "content": "If we introduce any new functional cookies or services in the future, this policy will be updated immediately with full disclosures.\n\nFor questions regarding our cookie practices, please contact:\n\n• Privacy Officer: privacy@spectredefend.com\n• General Information: defense@spectredefend.com\n• Brand: SPECTRE DEFEND\n• Legal Entity: [REQUIRES BUSINESS CONFIRMATION]"
+    }
+  ]
+}

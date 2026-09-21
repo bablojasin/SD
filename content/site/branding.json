@@ -1,0 +1,17 @@
+{
+  "brandName": "SPECTRE DEFEND",
+  "wordmark": "SPECTRE DEFEND",
+  "brandTagline": "Autonomous Enterprise Cyber Defense & Zero-Trust Intelligence",
+  "brandDescription": "SPECTRE DEFEND provides autonomous zero-trust cyber defense, continuous threat detection, incident containment, and cryptographic security architecture for enterprise infrastructures worldwide.",
+  "logoAltText": "SPECTRE DEFEND Autonomous Cyber Defense",
+  "primaryLogo": "/assets/brand/spectre-defend-logo.svg",
+  "logoImage": "/logo.svg",
+  "lightLogo": "/assets/brand/spectre-defend-logo-light.svg",
+  "darkLogo": "/assets/brand/spectre-defend-logo-dark.svg",
+  "symbolLogo": "/assets/brand/spectre-defend-logo-symbol.svg",
+  "whiteLogo": "/assets/brand/spectre-defend-logo-white.svg",
+  "blackLogo": "/assets/brand/spectre-defend-logo-black.svg",
+  "monochromeLogo": "/assets/brand/spectre-defend-logo-white.svg",
+  "favicon": "/assets/brand/spectre-defend-favicon.svg",
+  "appleTouchIcon": "/apple-touch-icon.svg"
+}

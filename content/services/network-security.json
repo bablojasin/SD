@@ -1,0 +1,45 @@
+{
+  "title": "Network Security",
+  "slug": "network-security",
+  "shortDescription": "Protect networks, endpoints and critical infrastructure from unauthorized access.",
+  "fullDescription": "Defend distributed networks with deep layer-7 packet inspection, TLS 1.3 cryptographic verification, and microsegmented zero-trust security perimeters. SPECTRE DEFEND insulates on-premise hardware, SD-WAN fabrics, and hybrid cloud backbones against lateral intrusion, automated credential stuffing, and high-volume volumetric DDoS assaults.",
+  "featuredImage": "/src/assets/images/server_security_rack_1789575952898.jpg",
+  "icon": "Network",
+  "category": "Infrastructure",
+  "order": 2,
+  "isFeatured": true,
+  "features": [
+    "Zero-Trust Dynamic Microsegmentation",
+    "Deep Packet Wire-Speed TLS 1.3 Cryptographic Inspection",
+    "Automated Multi-Terabit DDoS Mitigation Fabric",
+    "Next-Gen AI Firewall Integration & Protocol Sanitization"
+  ],
+  "metrics": "99.999% Network Uptime",
+  "seoTitle": "Enterprise Network Security & Microsegmentation | SPECTRE DEFEND",
+  "seoDescription": "Hardened network security with line-rate packet inspection, autonomous zero-trust microsegmentation, and DDoS suppression.",
+  "whatIs": "SPECTRE DEFEND Network Security is a comprehensive infrastructure defense fabric providing wire-speed line-rate packet inspection, zero-trust network access (ZTNA), dynamic microsegmentation, and terabit-scale distributed DDoS suppression.",
+  "howItWorks": "1. Ingress & Egress Wire Inspection: Traffic passes through cryptographic filtering gates verifying protocol validity.\n2. Microsegmentation Policies: Internal endpoints are partitioned into cryptographically isolated micro-zones.\n3. Continuous Traffic Profiling: AI anomaly detectors identify port scanning, C2 beaconing, and unauthorized data exfiltration.\n4. Automated Route Shunting: Malicious IP ranges and volumetric surges are shunted across global anycast scrubber nodes.",
+  "whyItMatters": "Flat enterprise networks enable threat actors to move laterally across workstations, servers, and sensitive storage systems after a single workstation breach. SPECTRE DEFEND eliminates lateral movement pathways completely.",
+  "whoItIsFor": "Distributed multi-office enterprises, data centers, hybrid cloud deployments, and organizations operating PCI-DSS or HIPAA compliant environments requiring strict subnet segregation.",
+  "deliverables": [
+    "Line-Rate TLS 1.3 Inspection Fabric",
+    "Dynamic Zero-Trust Microsegmentation Ruleset",
+    "Terabit DDoS Mitigation Service Level Agreement",
+    "Quarterly Network Topology & Penetration Audit"
+  ],
+  "faqs": [
+    {
+      "question": "Will deep packet inspection introduce latency to our network?",
+      "answer": "No. SPECTRE DEFEND uses hardware-accelerated eBPF datapaths and custom silicon offloading that processes full TLS 1.3 decryptions with sub-microsecond overhead, maintaining 99.999% network uptime."
+    },
+    {
+      "question": "Can SPECTRE DEFEND integrate with existing SD-WAN and MPLS providers?",
+      "answer": "Yes. SPECTRE DEFEND natively integrates with Cisco, Fortinet, Palo Alto Networks, AWS DirectConnect, and Azure ExpressRoute architectures."
+    }
+  ],
+  "relatedServices": [
+    "cloud-security",
+    "threat-detection",
+    "security-monitoring"
+  ]
+}

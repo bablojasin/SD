@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "spectre-defend-oauth-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2024-09-21",
+  "vars": {
+    // Production frontend URL allowed for CORS/Origin validation
+    "ALLOWED_ORIGIN": "https://spectredefend.com"
+  },
+  // IMPORTANT:
+  // Do NOT write plaintext secrets in this configuration file.
+  // Set secrets securely using the Wrangler CLI:
+  //   npx wrangler secret put GITHUB_CLIENT_ID
+  //   npx wrangler secret put GITHUB_CLIENT_SECRET
+  //   npx wrangler secret put NOTIFICATION_WEBHOOK_URL (optional)
+  "observability": {
+    "enabled": true
+  }
+}

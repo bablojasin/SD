@@ -1,0 +1,58 @@
+{
+  "sectionLabel": "About SPECTRE DEFEND",
+  "heading": "Defending Global Digital Sovereignty",
+  "highlightText": "Zero Trust, Zero Compromise",
+  "description": "SPECTRE DEFEND protects enterprises, sovereign cloud estates, infrastructure, applications, networks, and digital assets against modern cyber threats with autonomous intelligence.",
+  "heroImage": "/src/assets/images/about_3d_globe_1789575901855.jpg",
+  "doctrineHeading": "Our Security Doctrine: Zero Trust, Zero Compromise",
+  "story": "Founded by cybersecurity research fellows and former intelligence operatives, SPECTRE DEFEND was born out of an urgent realization: perimeter-based security is obsolete. Modern adversaries utilize AI-driven polymorphism, credential harvesting, and cloud misconfigurations to breach networks in seconds. SPECTRE DEFEND replaces reactive defense with continuous, mathematical zero-trust verification.",
+  "mission": "To eradicate digital extortion and unauthorized intrusion by providing autonomous, impenetrable cyber defense systems that protect organizations worldwide.",
+  "vision": "A digitally sovereign world where critical infrastructure, enterprise data, and human privacy remain unassailable against cyber warfare.",
+  "values": [
+    {
+      "title": "Continuous Verification",
+      "description": "Never trust, always verify. Every identity, process, and packet is challenged at every layer."
+    },
+    {
+      "title": "Sub-Second Neutralization",
+      "description": "Breach containment cannot wait for human triage. Autonomous action occurs in under 12 milliseconds."
+    },
+    {
+      "title": "Mathematical Resilience",
+      "description": "Provably secure cryptographic primitives engineered to resist both classical exploits and post-quantum threats."
+    },
+    {
+      "title": "Total Transparency",
+      "description": "Zero black-box obscurity. Every telemetry stream and containment rule is auditable by customer SecOps."
+    }
+  ],
+  "stats": [
+    { "value": "24/7/365", "label": "Continuous Telemetry Watch" },
+    { "value": "eBPF", "label": "Kernel-Level Behavioral Analysis" },
+    { "value": "Zero-Trust", "label": "Strict Least-Privilege Architecture" },
+    { "value": "Multi-Cloud", "label": "AWS, GCP & Azure Posture Auditing" }
+  ],
+  "cta": {
+    "heading": "Join The Global Defense Network",
+    "description": "Speak directly with our principal security architects to audit your attack surface.",
+    "buttonText": "Schedule Architectural Review",
+    "buttonLink": "/contact"
+  },
+  "faqs": [
+    {
+      "question": "What is SPECTRE DEFEND's founding doctrine?",
+      "answer": "SPECTRE DEFEND was founded on the mathematical premise that traditional perimeter firewalls are inherently obsolete against modern automated polymorphism. We operate under strict Zero Trust: never trust, always continuously verify identities, execution contexts, and packet payloads at every single layer.",
+      "order": 1
+    },
+    {
+      "question": "Where are SPECTRE DEFEND's security researchers and command centers located?",
+      "answer": "SPECTRE DEFEND operates primary sovereign Security Operations Centers in San Francisco, London, Singapore, and Tokyo, providing uninterrupted follow-the-sun continuous threat hunting and intelligence collation.",
+      "order": 2
+    },
+    {
+      "question": "Does SPECTRE DEFEND conduct third-party external penetration tests and audits?",
+      "answer": "Yes. SPECTRE DEFEND undergoes biannual independent third-party audits and adversarial penetration testing from accredited CREST-certified laboratories.",
+      "order": 3
+    }
+  ]
+}

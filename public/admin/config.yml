@@ -1,0 +1,525 @@
+# Decap CMS Configuration for SPECTRE DEFEND
+# Documentation: https://decapcms.org/docs/configuration-options/
+
+# Backend Configuration
+# The OAuth proxy Cloudflare Worker provides secure GitHub authentication without exposing secrets.
+backend:
+  name: github
+  # REPLACE with your GitHub repository: OWNER/REPOSITORY (e.g. spectredefend/website)
+  repo: OWNER/REPOSITORY
+  branch: main
+  # Cloudflare Worker OAuth Proxy Base URL
+  # Replace with your deployed Cloudflare Worker domain (e.g. https://spectredefend-oauth.workers.dev)
+  base_url: https://spectredefend-oauth.workers.dev
+  auth_endpoint: auth
+
+# Local development backend support
+local_backend: false
+
+# Media & Uploads Storage
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Display Configuration
+site_url: "https://spectredefend.com"
+display_url: "https://spectredefend.com"
+logo_url: "/logo.svg"
+
+# Content Collections
+collections:
+
+  # -------------------------------------------------------------
+  # 1. SITE SETTINGS & BRANDING
+  # -------------------------------------------------------------
+  - name: "site_settings"
+    label: "Site Settings & Branding"
+    delete: false
+    files:
+      - name: "branding"
+        label: "Branding & Visual Identity (JSON)"
+        file: "content/site/branding.json"
+        fields:
+          - { label: "Brand Name", name: "brandName", widget: "string", hint: "The official company brand name: SPECTRE DEFEND" }
+          - { label: "Wordmark Text", name: "wordmark", widget: "string", hint: "Text representation of wordmark, e.g. SPECTRE DEFEND" }
+          - { label: "Brand Tagline", name: "brandTagline", widget: "string" }
+          - { label: "Brand Description / Organization Description", name: "brandDescription", widget: "text" }
+          - { label: "Logo Alt Text", name: "logoAltText", widget: "string" }
+          - { label: "Primary Logo (Symbol + Wordmark)", name: "primaryLogo", widget: "image" }
+          - { label: "Default Logo Image", name: "logoImage", widget: "image" }
+          - { label: "Symbol-Only Logo (Icon Only)", name: "symbolLogo", widget: "image" }
+          - { label: "Dark Variant Logo (For Dark Backgrounds)", name: "darkLogo", widget: "image" }
+          - { label: "Light Variant Logo (For Light Backgrounds)", name: "lightLogo", widget: "image" }
+          - { label: "White Monochrome Logo", name: "whiteLogo", widget: "image", required: false }
+          - { label: "Black Monochrome Logo", name: "blackLogo", widget: "image", required: false }
+          - { label: "Monochrome Variant Logo", name: "monochromeLogo", widget: "image", required: false }
+          - { label: "Favicon (SVG/PNG)", name: "favicon", widget: "image" }
+          - { label: "Apple Touch Icon", name: "appleTouchIcon", widget: "image" }
+
+      - name: "branding_yaml"
+        label: "Branding & Master Logos (YAML)"
+        file: "content/settings/branding.yml"
+        fields:
+          - { label: "Brand Name", name: "brand_name", widget: "string", default: "SPECTRE DEFEND" }
+          - { label: "Legal Entity Name", name: "legal_name", widget: "string", default: "SPECTRE DEFEND Inc." }
+          - { label: "Brand Tagline", name: "tagline", widget: "string" }
+          - label: "Logo Assets"
+            name: "logo"
+            widget: "object"
+            fields:
+              - { label: "Master Vector Logo", name: "master", widget: "image", default: "/assets/brand/spectre-defend-logo.svg" }
+              - { label: "Symbol Logo (Icon)", name: "symbol", widget: "image", default: "/assets/brand/spectre-defend-logo-symbol.svg" }
+              - { label: "Dark Background Logo", name: "dark", widget: "image", default: "/assets/brand/spectre-defend-logo-dark.svg" }
+              - { label: "Light Background Logo", name: "light", widget: "image", default: "/assets/brand/spectre-defend-logo-light.svg" }
+              - { label: "White Monochrome Logo", name: "white", widget: "image", default: "/assets/brand/spectre-defend-logo-white.svg" }
+              - { label: "Black Monochrome Logo", name: "black", widget: "image", default: "/assets/brand/spectre-defend-logo-black.svg" }
+              - { label: "Favicon SVG", name: "favicon", widget: "image", default: "/assets/brand/spectre-defend-favicon.svg" }
+          - label: "Brand Colors"
+            name: "colors"
+            widget: "object"
+            fields:
+              - { label: "Primary Color", name: "primary", widget: "color", default: "#B7FF00" }
+              - { label: "Secondary Color", name: "secondary", widget: "color", default: "#050807" }
+              - { label: "Text Dark", name: "text_dark", widget: "color", default: "#050807" }
+              - { label: "Text Light", name: "text_light", widget: "color", default: "#FFFFFF" }
+
+      - name: "general"
+        label: "General Settings"
+        file: "content/site/settings.json"
+        fields:
+          - { label: "Site Name", name: "siteName", widget: "string", hint: "The official name of the company/platform" }
+          - { label: "Tagline", name: "tagline", widget: "string", hint: "Brand tagline displayed on headers and cards" }
+          - { label: "Site URL", name: "siteUrl", widget: "string", hint: "Production canonical URL" }
+          - { label: "Logo Wordmark Text", name: "logoText", widget: "string" }
+          - { label: "Logo Image", name: "logoImage", widget: "image", required: false }
+          - { label: "Favicon", name: "favicon", widget: "image", required: false }
+          - { label: "Apple Touch Icon", name: "appleTouchIcon", widget: "image", required: false }
+          - { label: "Contact Email", name: "contactEmail", widget: "string" }
+          - { label: "Contact Phone", name: "contactPhone", widget: "string" }
+          - { label: "Physical Address", name: "address", widget: "string" }
+          - { label: "Live Telemetry Status Text", name: "operationalStatus", widget: "string" }
+          - label: "Social Media Links"
+            name: "socialLinks"
+            widget: "object"
+            fields:
+              - { label: "Twitter / X Profile URL", name: "twitter", widget: "string", required: false }
+              - { label: "GitHub Profile URL", name: "github", widget: "string", required: false }
+              - { label: "LinkedIn Company URL", name: "linkedin", widget: "string", required: false }
+              - { label: "Discord Community URL", name: "discord", widget: "string", required: false }
+
+      - name: "navigation"
+        label: "Header Navigation"
+        file: "content/site/navigation.json"
+        fields:
+          - label: "Main Navigation Items"
+            name: "mainNav"
+            widget: "list"
+            fields:
+              - { label: "Nav Label", name: "label", widget: "string" }
+              - { label: "Nav Link (Href)", name: "href", widget: "string", hint: "e.g. /, /about, /services, /blog, /contact" }
+          - label: "Header Primary CTA"
+            name: "primaryCta"
+            widget: "object"
+            fields:
+              - { label: "Button Label", name: "label", widget: "string" }
+              - { label: "Button Link", name: "href", widget: "string" }
+
+      - name: "footer"
+        label: "Footer Content"
+        file: "content/site/footer.json"
+        fields:
+          - { label: "Footer Logo", name: "footerLogo", widget: "image", required: false }
+          - { label: "Company Description", name: "companyDescription", widget: "text" }
+          - { label: "Contact Email", name: "contactEmail", widget: "string", required: false }
+          - { label: "Contact Phone", name: "contactPhone", widget: "string", required: false }
+          - { label: "Address", name: "address", widget: "string", required: false }
+          - label: "Quick Links"
+            name: "quickLinks"
+            widget: "list"
+            fields:
+              - { label: "Link Label", name: "label", widget: "string" }
+              - { label: "Link Target", name: "href", widget: "string" }
+          - label: "Services Links"
+            name: "servicesLinks"
+            widget: "list"
+            fields:
+              - { label: "Service Name", name: "label", widget: "string" }
+              - { label: "Service Link", name: "href", widget: "string" }
+          - label: "Legal Links"
+            name: "legalLinks"
+            widget: "list"
+            fields:
+              - { label: "Legal Label", name: "label", widget: "string" }
+              - { label: "Legal Link", name: "href", widget: "string" }
+          - { label: "Copyright Notice", name: "copyright", widget: "string" }
+
+      - name: "seo"
+        label: "Global SEO & Social Cards"
+        file: "content/site/seo.json"
+        fields:
+          - { label: "Site Name", name: "siteName", widget: "string" }
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Site Description", name: "siteDescription", widget: "text" }
+          - { label: "Site URL", name: "siteUrl", widget: "string" }
+          - { label: "Default Meta Title", name: "defaultTitle", widget: "string" }
+          - { label: "Title Template", name: "titleTemplate", widget: "string", hint: "e.g. %s | SPECTRE DEFEND" }
+          - { label: "Default Meta Description", name: "defaultDescription", widget: "text" }
+          - { label: "Default Open Graph Image", name: "defaultOgImage", widget: "image" }
+          - { label: "Default Social Image", name: "defaultSocialImage", widget: "image", required: false }
+          - { label: "Twitter Handle", name: "twitterHandle", widget: "string" }
+          - { label: "Organization Legal Name", name: "organizationName", widget: "string" }
+          - { label: "Organization Logo", name: "organizationLogo", widget: "image" }
+          - { label: "Google Site Verification Token", name: "googleSiteVerification", widget: "string", required: false }
+          - { label: "Bing Site Verification Token", name: "bingSiteVerification", widget: "string", required: false }
+
+  # -------------------------------------------------------------
+  # 2. HOME PAGE
+  # -------------------------------------------------------------
+  - name: "home_page"
+    label: "Home Page"
+    delete: false
+    files:
+      - name: "home"
+        label: "Home Page Sections"
+        file: "content/pages/home.json"
+        fields:
+          # Hero
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Small Pill Label", name: "smallLabel", widget: "string" }
+              - { label: "Main Headline (Prefix)", name: "headlinePrimary", widget: "string" }
+              - { label: "Highlighted Headline Text", name: "headlineHighlight", widget: "string" }
+              - { label: "Hero Description", name: "description", widget: "text" }
+              - { label: "Primary Button Text", name: "primaryButtonText", widget: "string" }
+              - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
+              - { label: "Hero 3D Visual Image", name: "image", widget: "image" }
+              - { label: "Hero Visual Alt Text", name: "imageAlt", widget: "string" }
+              - { label: "Live Stats Metric Value", name: "statsNumber", widget: "string" }
+              - { label: "Live Stats Metric Label", name: "statsLabel", widget: "string" }
+              - { label: "Live Stats Status Badge", name: "statsBadge", widget: "string" }
+              - { label: "Circular Rotating Badge Text", name: "badgeText", widget: "string" }
+              - label: "Interactive Service Quick Rows"
+                name: "serviceRows"
+                widget: "list"
+                fields:
+                  - { label: "Row Identifier", name: "id", widget: "string" }
+                  - { label: "Display Label", name: "label", widget: "string" }
+                  - { label: "Target Service Slug", name: "serviceId", widget: "string" }
+
+          # About Preview
+          - label: "About Section Preview"
+            name: "aboutPreview"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Preview Description", name: "description", widget: "text" }
+              - { label: "CTA Button Text", name: "ctaLabel", widget: "string" }
+              - { label: "CTA Button Link", name: "ctaLink", widget: "string" }
+              - { label: "3D Globe Visual Image", name: "globeImage", widget: "image" }
+
+          # Services Section
+          - label: "Services Section Header"
+            name: "servicesSection"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Section Description", name: "description", widget: "text" }
+
+          # Security Showcase
+          - label: "Security Capabilities Showcase"
+            name: "securityShowcase"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Showcase Description", name: "description", widget: "text" }
+
+          # Testimonials Header
+          - label: "Testimonials Header"
+            name: "testimonialsSection"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Section Heading", name: "heading", widget: "string" }
+
+          # Blog Section Header
+          - label: "Blog Showcase Header"
+            name: "blogSection"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Section Description", name: "description", widget: "text" }
+              - { label: "Number of Posts to Show", name: "postCount", widget: "number", default: 3 }
+
+          # Bottom CTA
+          - label: "Bottom Call-To-Action"
+            name: "ctaSection"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "CTA Heading", name: "heading", widget: "string" }
+              - { label: "CTA Description", name: "description", widget: "text" }
+              - { label: "CTA Button Text", name: "buttonText", widget: "string" }
+              - { label: "CTA Button Link", name: "buttonLink", widget: "string" }
+              - { label: "CTA 3D Asset Image", name: "image", widget: "image" }
+
+          - label: "Frequently Asked Questions"
+            name: "faqs"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+              - { label: "Display Order", name: "order", widget: "number", default: 1 }
+
+  # -------------------------------------------------------------
+  # 3. ABOUT PAGE
+  # -------------------------------------------------------------
+  - name: "about_page"
+    label: "About Page"
+    delete: false
+    files:
+      - name: "about"
+        label: "About Us Details"
+        file: "content/pages/about.json"
+        fields:
+          - { label: "Section Pill Label", name: "sectionLabel", widget: "string" }
+          - { label: "Hero Heading", name: "heading", widget: "string" }
+          - { label: "Highlighted Heading Phrase", name: "highlightText", widget: "string" }
+          - { label: "Hero Description", name: "description", widget: "text" }
+          - { label: "Hero 3D Globe Image", name: "heroImage", widget: "image" }
+          - { label: "Security Doctrine Title", name: "doctrineHeading", widget: "string" }
+          - { label: "Company Origin Story", name: "story", widget: "markdown" }
+          - { label: "Mission Statement", name: "mission", widget: "text" }
+          - { label: "Vision Statement", name: "vision", widget: "text" }
+          - label: "Core Security Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Value Title", name: "title", widget: "string" }
+              - { label: "Value Description", name: "description", widget: "text" }
+          - label: "Security Statistics"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Metric Value", name: "value", widget: "string" }
+              - { label: "Metric Label", name: "label", widget: "string" }
+          - label: "About Page Call-To-Action"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+              - { label: "Button Link", name: "buttonLink", widget: "string" }
+          - label: "Frequently Asked Questions"
+            name: "faqs"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+              - { label: "Display Order", name: "order", widget: "number", default: 1 }
+
+  # -------------------------------------------------------------
+  # 4. SERVICES OVERVIEW PAGE
+  # -------------------------------------------------------------
+  - name: "services_page"
+    label: "Services Page Settings"
+    delete: false
+    files:
+      - name: "services_page_settings"
+        label: "Services Overview & FAQs"
+        file: "content/pages/services.json"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Frequently Asked Questions"
+            name: "faqs"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+              - { label: "Display Order", name: "order", widget: "number", default: 1 }
+
+  # -------------------------------------------------------------
+  # 5. CONTACT PAGE
+  # -------------------------------------------------------------
+  - name: "contact_page"
+    label: "Contact Page"
+    delete: false
+    files:
+      - name: "contact"
+        label: "Contact Information"
+        file: "content/pages/contact.json"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Response SLA Notice", name: "responseSLA", widget: "string" }
+          - { label: "General Support Phone", name: "phone", widget: "string" }
+          - { label: "Emergency Red-Team Phone", name: "emergencyPhone", widget: "string" }
+          - { label: "Emergency Response Email", name: "email", widget: "string" }
+          - { label: "General Inquiries Email", name: "generalEmail", widget: "string" }
+          - label: "Global Headquarters"
+            name: "headquarters"
+            widget: "object"
+            fields:
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Full Address", name: "address", widget: "string" }
+          - label: "Frequently Asked Questions"
+            name: "faqs"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+              - { label: "Display Order", name: "order", widget: "number", default: 1 }
+
+  # -------------------------------------------------------------
+  # 6. SERVICES
+  # -------------------------------------------------------------
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Service Title", name: "title", widget: "string" }
+      - { label: "Slug (URL Path)", name: "slug", widget: "string", hint: "Unique identifier for the URL, e.g., cloud-security" }
+      - { label: "Short Summary Description", name: "shortDescription", widget: "text" }
+      - { label: "Full Architectural Description", name: "fullDescription", widget: "markdown" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - { label: "Lucide Icon Name", name: "icon", widget: "select", options: ["ShieldAlert", "Network", "CloudCheck", "ScanEye", "Flame", "Laptop", "ShieldCheck", "Lock"] }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Display Order", name: "order", widget: "number", default: 1 }
+      - { label: "Featured on Homepage", name: "isFeatured", widget: "boolean", default: false }
+      - label: "Key Capabilities & Features"
+        name: "features"
+        widget: "list"
+        field: { label: "Feature Description", widget: "string" }
+      - { label: "Highlight Metric", name: "metrics", widget: "string", hint: "e.g. <12ms Reaction Time, 99.999% Uptime" }
+      - { label: "SEO Title", name: "seoTitle", widget: "string", required: false }
+      - { label: "SEO Meta Description", name: "seoDescription", widget: "text", required: false }
+      - { label: "What Is This Service (Direct Semantic Answer)", name: "whatIs", widget: "text", required: false }
+      - { label: "How It Works (Technical Process Flow)", name: "howItWorks", widget: "markdown", required: false }
+      - { label: "Why It Matters (Risk & Impact Analysis)", name: "whyItMatters", widget: "text", required: false }
+      - { label: "Target Audience (Who It Is For)", name: "whoItIsFor", widget: "string", required: false }
+      - label: "Client Deliverables"
+        name: "deliverables"
+        widget: "list"
+        required: false
+        field: { label: "Deliverable Item", widget: "string" }
+      - label: "Frequently Asked Questions (FAQ)"
+        name: "faqs"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Answer", name: "answer", widget: "text" }
+      - label: "Related Service Slugs"
+        name: "relatedServices"
+        widget: "list"
+        required: false
+        field: { label: "Service Slug", widget: "string" }
+
+  # -------------------------------------------------------------
+  # 7. TEAM MEMBERS
+  # -------------------------------------------------------------
+  - name: "team"
+    label: "Team Members"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Full Name", name: "name", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Job Position / Title", name: "position", widget: "string" }
+      - { label: "Profile Photo", name: "profileImage", widget: "image" }
+      - { label: "Short Biography", name: "shortBiography", widget: "text" }
+      - { label: "Full Biography", name: "fullBiography", widget: "markdown" }
+      - { label: "Direct Email", name: "email", widget: "string", required: false }
+      - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+      - { label: "Twitter / X Profile", name: "twitter", widget: "string", required: false }
+      - { label: "GitHub Profile", name: "github", widget: "string", required: false }
+      - { label: "Display Order", name: "displayOrder", widget: "number", default: 1 }
+      - { label: "Featured on About Page", name: "isFeatured", widget: "boolean", default: false }
+
+  # -------------------------------------------------------------
+  # 8. TESTIMONIALS
+  # -------------------------------------------------------------
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Client / Leader Name", name: "name", widget: "string" }
+      - { label: "Professional Role", name: "role", widget: "string" }
+      - { label: "Enterprise Company Name", name: "company", widget: "string" }
+      - { label: "Avatar Photo", name: "avatarUrl", widget: "image" }
+      - { label: "Testimonial Quote", name: "quote", widget: "text" }
+      - { label: "Star Rating (1-5)", name: "rating", widget: "number", min: 1, max: 5, default: 5 }
+      - { label: "Key Highlight Metric", name: "highlightMetric", widget: "string" }
+      - { label: "Display Order", name: "displayOrder", widget: "number", default: 1 }
+
+  # -------------------------------------------------------------
+  # 9. BLOG / INSIGHTS
+  # -------------------------------------------------------------
+  - name: "blog"
+    label: "Blog / Insights"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Article Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Featured Article Banner", name: "featuredImage", widget: "image" }
+      - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
+      - { label: "Article Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Full Article Content", name: "content", widget: "markdown" }
+      - { label: "Author Name", name: "author", widget: "string" }
+      - { label: "Author Role", name: "authorRole", widget: "string" }
+      - { label: "Author Avatar Photo", name: "authorImage", widget: "image" }
+      - { label: "Publish Date", name: "publishDate", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Estimated Read Time", name: "readTime", widget: "string", default: "5 min read" }
+      - { label: "Primary Category", name: "category", widget: "string" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", widget: "string" }
+      - { label: "Featured Post", name: "isFeatured", widget: "boolean", default: false }
+      - { label: "SEO Title", name: "seoTitle", widget: "string", required: false }
+      - { label: "SEO Description", name: "seoDescription", widget: "text", required: false }
+
+  # -------------------------------------------------------------
+  # 10. LEGAL PAGES
+  # -------------------------------------------------------------
+  - name: "legal"
+    label: "Legal Pages"
+    folder: "content/legal"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Document Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Last Updated Date", name: "lastUpdated", widget: "string" }
+      - { label: "Effective Date", name: "effectiveDate", widget: "string" }
+      - { label: "Summary Statement", name: "summary", widget: "text" }
+      - label: "Document Sections"
+        name: "sections"
+        widget: "list"
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Section Content", name: "content", widget: "markdown" }

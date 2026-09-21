@@ -1,0 +1,45 @@
+{
+  "title": "Endpoint Protection (EDR / XDR)",
+  "slug": "endpoint-protection",
+  "shortDescription": "Autonomous protection and anti-tamper shielding for all laptops, servers and edge nodes.",
+  "fullDescription": "Next-generation endpoint detection and response (EDR/XDR) engineered for distributed enterprise workforces. Lightweight kernel telemetry operates silently without CPU degradation while blocking fileless scripts, memory exploits, and credential theft attempts.",
+  "featuredImage": "/src/assets/images/cyber_analyst_desk_1789575942605.jpg",
+  "icon": "ShieldCheck",
+  "category": "Endpoint",
+  "order": 7,
+  "isFeatured": false,
+  "features": [
+    "Sub-1% CPU Overhead Ultra-Lightweight Microagent",
+    "Hardware-Rooted Anti-Tamper Protective Shield",
+    "Offline Heuristic Engine for Detached Operations",
+    "Instant One-Click Forensic Memory Snapshotting"
+  ],
+  "metrics": "0% Endpoint Drift",
+  "seoTitle": "Autonomous Endpoint Detection & Response (EDR) | SPECTRE DEFEND",
+  "seoDescription": "Next-gen endpoint defense with hardware-rooted tamper protection, memory shielding, and autonomous quarantine.",
+  "whatIs": "SPECTRE DEFEND Endpoint Protection (EDR / XDR) is an ultra-lightweight endpoint agent providing real-time kernel memory defense, fileless malware neutralization, and autonomous device quarantine across Windows, macOS, Linux, and server environments.",
+  "howItWorks": "1. Deep Kernel Hooking: Operates unobtrusively at the OS boundary using eBPF and signed drivers.\n2. Behavioral Execution Guard: Analyzes in-memory process transitions, DLL injections, and API calls.\n3. Autonomous Local Containment: Suspicious processes are instantly isolated even when the device is disconnected from the internet.\n4. Telemetry Telemetry Synchronization: Forensics and process trees are uploaded for enterprise-wide correlation.",
+  "whyItMatters": "Endpoints are the primary point of entry for over 70% of enterprise breaches. SPECTRE DEFEND ensures that even if an employee clicks a sophisticated malicious payload, the threat is blocked before malicious code executes in memory.",
+  "whoItIsFor": "Distributed remote workforces, mobile executive laptops, critical production Linux servers, and POS terminals.",
+  "deliverables": [
+    "Enterprise-Wide Cross-Platform Agent Deployment Suite",
+    "Zero-Configuration Anti-Ransomware Memory Shield",
+    "Device Quarantine and Live Remediation Terminal",
+    "Live Fleet Inventory and Vulnerable Software Visibility"
+  ],
+  "faqs": [
+    {
+      "question": "Will the agent slow down developer laptops or compiled builds?",
+      "answer": "No. SPECTRE DEFEND agents consume less than 1% CPU utilization and fewer than 60MB of RAM, engineered specifically with developer tooling exclusions."
+    },
+    {
+      "question": "What happens if an endpoint gets attacked while offline?",
+      "answer": "SPECTRE DEFEND's autonomous heuristic engine operates completely on-device, isolating threats and locking files locally without requiring cloud connectivity."
+    }
+  ],
+  "relatedServices": [
+    "threat-detection",
+    "access-management",
+    "security-monitoring"
+  ]
+}

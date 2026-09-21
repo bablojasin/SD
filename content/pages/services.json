@@ -1,0 +1,22 @@
+{
+  "sectionLabel": "Enterprise Defense Capabilities",
+  "heading": "Comprehensive Cybersecurity Services",
+  "description": "Engineered to protect every vector of your digital estate: from deep wire packet analysis to autonomous cloud workload containment.",
+  "faqs": [
+    {
+      "question": "Can SPECTRE DEFEND services be deployed modularly or do they require the full suite?",
+      "answer": "SPECTRE DEFEND services are fully modular. You can deploy standalone Cloud Security, Penetration Testing, or 24/7 Security Monitoring, or integrate the complete unified Zero-Trust Defense Fabric across your infrastructure.",
+      "order": 1
+    },
+    {
+      "question": "How does SPECTRE DEFEND integrate with existing enterprise tools like Splunk, Datadog, or Jira?",
+      "answer": "SPECTRE DEFEND provides native bi-directional webhooks and REST APIs for Splunk, Datadog, Elastic, Sentinel, ServiceNow, and Jira, synchronizing threat alerts and automated containment actions in real-time.",
+      "order": 2
+    },
+    {
+      "question": "Do you provide custom compliance mapping for financial and healthcare institutions?",
+      "answer": "Yes. All monitoring and vulnerability assessment deliverables include automated compliance control mapping for PCI-DSS 4.0, HIPAA Security Rule, FFIEC, and GDPR Article 32.",
+      "order": 3
+    }
+  ]
+}

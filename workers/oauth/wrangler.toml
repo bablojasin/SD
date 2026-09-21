@@ -1,0 +1,18 @@
+# Cloudflare Worker Configuration for Decap CMS GitHub OAuth Proxy
+name = "spectredefend-decap-oauth"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# Environmental variables (Non-sensitive)
+[vars]
+# Replace with your production site origin or Decap CMS admin URL
+ALLOWED_ORIGIN = "https://spectredefend.com"
+
+# SECRETS CONFIGURATION NOTICE:
+# The following secrets MUST be set via Wrangler CLI or Cloudflare Dashboard:
+# 1. GITHUB_CLIENT_ID: The Client ID from your GitHub OAuth App
+# 2. GITHUB_CLIENT_SECRET: The Client Secret from your GitHub OAuth App (NEVER commit to git!)
+#
+# Commands to set secrets:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET

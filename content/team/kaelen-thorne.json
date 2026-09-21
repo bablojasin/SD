@@ -1,0 +1,14 @@
+{
+  "name": "Kaelen Thorne",
+  "slug": "kaelen-thorne",
+  "position": "Director of Global Threat Operations",
+  "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+  "shortBiography": "Leads 24/7 autonomous SOC operations across North America, Europe, and Asia-Pacific with sub-minute incident containment records.",
+  "fullBiography": "Kaelen directs our global SecOps sentinel team, managing 24/7 offensive and defensive incident mitigation. A veteran incident commander with over fifteen years neutralizing state-sponsored threat actors and extortion cartels, Kaelen's playbooks have preserved billions in enterprise digital assets.",
+  "email": "k.thorne@spectredefend.com",
+  "linkedin": "https://linkedin.com/in/kaelen-thorne-soc",
+  "twitter": "https://twitter.com/kaelenthorne",
+  "github": "https://github.com/kaelen-thorne",
+  "displayOrder": 3,
+  "isFeatured": true
+}

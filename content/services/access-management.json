@@ -1,0 +1,45 @@
+{
+  "title": "Zero-Trust Access Management (IAM)",
+  "slug": "access-management",
+  "shortDescription": "Continuous cryptographic identity verification and adaptive least-privilege enforcement.",
+  "fullDescription": "Eliminate static passwords and blind network trust with adaptive, context-aware identity verification. Every user request is evaluated against device health, biometric assurance, network posture, and temporal telemetry before granting just-in-time microsegmented access.",
+  "featuredImage": "/src/assets/images/server_security_rack_1789575952898.jpg",
+  "icon": "Lock",
+  "category": "Identity",
+  "order": 8,
+  "isFeatured": false,
+  "features": [
+    "FIDO2 / WebAuthn Hardware Cryptographic Passkeys",
+    "Context-Aware Dynamic Privilege Escalation",
+    "Continuous Posture Assessment on Every Packet",
+    "Seamless SAML / OIDC Enterprise Federation"
+  ],
+  "metrics": "FIDO2 / Hardware Security Keys",
+  "seoTitle": "Zero-Trust Identity & Access Management (IAM) | SPECTRE DEFEND",
+  "seoDescription": "Phishing-resistant zero-trust access control with continuous biometric verification and ephemeral access gating.",
+  "whatIs": "SPECTRE DEFEND Zero-Trust Access Management (IAM) is a context-driven identity governance and access platform enforcing phishing-resistant authentication, passwordless passkeys, and continuous device-state verification across all corporate applications.",
+  "howItWorks": "1. Passwordless Cryptographic Sign-On: Authenticate users via FIDO2 / WebAuthn hardware credentials.\n2. Context Risk Evaluation: Every access attempt analyzes geographic signals, device security compliance, and session history.\n3. Just-In-Time Privilege Gating: Elevates privileges on an ephemeral, time-bounded basis for sensitive infrastructure commands.\n4. Real-Time Revocation: Instantly terminates active sessions if device health or network parameters deviate from security policy.",
+  "whyItMatters": "Compromised credentials and phishing attacks remain the #1 root cause of enterprise perimeter breaches. Adopting phishing-resistant hardware authentication renders credential-stealing attacks completely ineffective.",
+  "whoItIsFor": "Organizations aiming for compliance with US Federal Executive Order 14028, enterprises with remote workforces accessing corporate SaaS applications, and DevOps teams managing production secrets.",
+  "deliverables": [
+    "FIDO2 / WebAuthn Enterprise Passkey Infrastructure",
+    "Single Sign-On (SSO) Portal with 200+ Prebuilt App Connectors",
+    "Just-In-Time (JIT) Privileged Access Management Console",
+    "Identity Threat Detection & Session Anomaly Analytics"
+  ],
+  "faqs": [
+    {
+      "question": "Can SPECTRE DEFEND integrate with Okta, Microsoft Entra ID, or Google Workspace?",
+      "answer": "Yes. SPECTRE DEFEND acts as an adaptive zero-trust security layer sitting atop or federating with Okta, Microsoft Entra ID, and Google Workspace via SAML 2.0 and OIDC."
+    },
+    {
+      "question": "How are lost hardware passkeys handled securely?",
+      "answer": "We provide self-service cryptographic recovery rituals supported by multi-party consensus verification without ever exposing fallback password attack vectors."
+    }
+  ],
+  "relatedServices": [
+    "cloud-security",
+    "network-security",
+    "endpoint-protection"
+  ]
+}

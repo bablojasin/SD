@@ -1,0 +1,14 @@
+{
+  "name": "Sarah Lin",
+  "slug": "sarah-lin",
+  "position": "Principal Cloud Security Architect",
+  "profileImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+  "shortBiography": "Authority on Kubernetes hardening, container runtime sandboxing, and immutable infrastructure security.",
+  "fullBiography": "Sarah designs zero-trust cloud boundaries for Fortune 500 enterprises. Specializing in container runtime integrity and IAM entitlement automation, she authors key open-source security plugins utilized by thousands of DevOps teams globally.",
+  "email": "s.lin@spectredefend.com",
+  "linkedin": "https://linkedin.com/in/sarah-lin-cloudsec",
+  "twitter": "https://twitter.com/sarahlin_cloud",
+  "github": "https://github.com/sarahlin",
+  "displayOrder": 4,
+  "isFeatured": false
+}

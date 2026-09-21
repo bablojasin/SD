@@ -1,0 +1,45 @@
+{
+  "title": "24/7 Managed Security Monitoring",
+  "slug": "security-monitoring",
+  "shortDescription": "Continuously monitor your digital environment for emerging threats and anomalies.",
+  "fullDescription": "Round-the-clock Security Operations Center (SOC) vigilantly supervising hybrid environments worldwide. Combining high-velocity behavioral machine learning with seasoned human tier-3 threat analysts, SPECTRE DEFEND ensures 24/7/365 vigilance with rapid containment playbooks.",
+  "featuredImage": "/src/assets/images/soc_war_room_1789575925158.jpg",
+  "icon": "Laptop",
+  "category": "Operations",
+  "order": 6,
+  "isFeatured": false,
+  "features": [
+    "24/7/365 Sovereign Global SOC Surveillance",
+    "Real-Time SIEM & Log Telemetry Aggregation",
+    "Automated Threat Hunting & Forensics Preservation",
+    "Dedicated Named Threat Response Commander"
+  ],
+  "metrics": "24/7/365 Active Vigilance",
+  "seoTitle": "24/7 Managed SOC & Autonomous Security Monitoring | SPECTRE DEFEND",
+  "seoDescription": "Continuous 24/7 cyber surveillance and immediate incident response triage backed by elite threat hunting specialists.",
+  "whatIs": "SPECTRE DEFEND 24/7 Managed Security Monitoring is a turnkey managed detection and response (MDR) service delivering continuous surveillance, threat hunting, and instant incident triage through our sovereign Security Operations Centers.",
+  "howItWorks": "1. Multi-Source Ingestion: Log streams, network netflow, identity events, and endpoint signals flow into our high-speed analytics lake.\n2. Threat Correlation & Suppression: False positives are filtered using custom machine-learning correlation models.\n3. Human Tier-3 Threat Hunting: Experienced SOC analysts actively hunt for stealth anomalies and unauthorized activities.\n4. Rapid Coordinated Containment: When a true incident is verified, our team acts immediately according to tailored response runbooks.",
+  "whyItMatters": "Adversaries rarely attack during standard business hours; weekend and holiday incursions are frequent. A 24/7/365 SOC ensures that intrusions are detected and contained with immediate priority, preventing protracted dwell time.",
+  "whoItIsFor": "Mid-market to enterprise organizations that need continuous SOC monitoring capabilities without the overhead of building and staffing an internal 24/7 operations center.",
+  "deliverables": [
+    "24/7/365 Continuous Threat Surveillance Coverage",
+    "Rapid 15-Minute Critical Incident Notification SLA Target",
+    "Unified SIEM & Telemetry Aggregation Portal",
+    "Monthly Security Posture & Trend Analysis Reports"
+  ],
+  "faqs": [
+    {
+      "question": "What is the response time when a critical incident occurs?",
+      "answer": "SPECTRE DEFEND targets a rapid 15-minute SLA for critical severity incident triage and immediate containment initiation."
+    },
+    {
+      "question": "Can SPECTRE DEFEND ingest data from our existing SIEM or cloud logs?",
+      "answer": "Yes. We support pre-built connectors for Splunk, Datadog, Microsoft Sentinel, AWS CloudWatch, Google Chronicle, and Snowflake."
+    }
+  ],
+  "relatedServices": [
+    "threat-detection",
+    "endpoint-protection",
+    "network-security"
+  ]
+}

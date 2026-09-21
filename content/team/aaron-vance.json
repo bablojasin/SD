@@ -1,0 +1,14 @@
+{
+  "name": "Dr. Aaron Vance",
+  "slug": "aaron-vance",
+  "position": "Founder & Chief Security Scientist",
+  "profileImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+  "shortBiography": "Former national cyber defense architect with 20+ years specializing in automated malware heuristics and zero-trust cryptography.",
+  "fullBiography": "Dr. Aaron Vance has spent over two decades at the forefront of cyber warfare defense and cryptographic theory. Prior to founding SPECTRE DEFEND, Aaron advised critical national infrastructure committees on sovereign threat containment. His seminal work on kernel-level behavioral heuristics forms the computational backbone of SPECTRE DEFEND's autonomous telemetry engine.",
+  "email": "a.vance@spectredefend.com",
+  "linkedin": "https://linkedin.com/in/aaronvance-cyber",
+  "twitter": "https://twitter.com/dr_aaron_vance",
+  "github": "https://github.com/aaron-vance",
+  "displayOrder": 1,
+  "isFeatured": true
+}

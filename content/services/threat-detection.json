@@ -1,0 +1,45 @@
+{
+  "title": "Threat Detection & Response",
+  "slug": "threat-detection",
+  "shortDescription": "Identify suspicious activity quickly and respond before threats escalate.",
+  "fullDescription": "SPECTRE DEFEND Threat Detection & Response combines sub-second behavioral telemetry with autonomous heuristic isolation. Our machine-learning engines continuously analyze millions of operating system events, memory allocations, and network sockets to detect advanced persistent threats (APTs), zero-day ransomware, and polymorphic adversaries before lateral movement occurs.",
+  "featuredImage": "/src/assets/images/soc_war_room_1789575925158.jpg",
+  "icon": "ShieldAlert",
+  "category": "Detection",
+  "order": 1,
+  "isFeatured": true,
+  "features": [
+    "Autonomous Endpoint Isolation in <12 milliseconds",
+    "Kernel-level eBPF Behavioral Anomaly Telemetry",
+    "Automated Memory Injection & Ransomware Suppression",
+    "Continuous MITRE ATT&CK Mapping & Threat Hunting"
+  ],
+  "metrics": "<12ms Quarantine Time",
+  "seoTitle": "Autonomous Threat Detection & Rapid Response | SPECTRE DEFEND",
+  "seoDescription": "Sub-second autonomous threat isolation and continuous behavioral heuristics stopping ransomware and zero-days in enterprise environments.",
+  "whatIs": "SPECTRE DEFEND Threat Detection & Response is an autonomous cyber defense system that continuously inspects system processes, memory spaces, and network telemetry to detect and quarantine zero-day threats in under 12 milliseconds without requiring manual intervention.",
+  "howItWorks": "1. Deep Telemetry Collection: Kernel-level eBPF probes stream real-time operational telemetry.\n2. Neural Behavioral Analysis: Heuristic models cross-reference behaviors against the MITRE ATT&CK matrix.\n3. Sub-Second Autonomous Quarantine: Compromised processes are frozen and network sockets severed instantly.\n4. Forensic Evidence Packaging: Memory dumps and timeline telemetry are compiled for SOC review.",
+  "whyItMatters": "Modern cyber threats move faster than human operators can respond. Ransomware can encrypt vital databases in under 4 minutes; SPECTRE DEFEND's autonomous isolation neutralizes malware at machine speed before irreversible data damage occurs.",
+  "whoItIsFor": "Enterprises with hybrid cloud infrastructures, financial institutions subject to strict uptime regulations, and organizations requiring zero-dwell-time protection against sophisticated nation-state adversaries.",
+  "deliverables": [
+    "Autonomous 24/7 Threat Isolation Engine",
+    "Real-Time SOC Command Dashboard Access",
+    "Detailed Forensic Incident Analysis Reports",
+    "Monthly Threat Intelligence & Vulnerability Briefings"
+  ],
+  "faqs": [
+    {
+      "question": "How does SPECTRE DEFEND isolate threats in less than 12 milliseconds?",
+      "answer": "SPECTRE DEFEND deploys lightweight eBPF hooks directly within the operating system kernel. When abnormal memory execution or unauthorized file encryption patterns are flagged, the microagent terminates the malicious thread and closes affected sockets immediately at the hardware/OS boundary."
+    },
+    {
+      "question": "Does threat detection require sending sensitive company data to the cloud?",
+      "answer": "No. Heuristic analysis runs locally on the agent using pre-compiled behavioral rule vectors. Only anonymized telemetry signals and cryptographic hashes are synced with central intelligence nodes."
+    }
+  ],
+  "relatedServices": [
+    "endpoint-protection",
+    "security-monitoring",
+    "incident-response"
+  ]
+}

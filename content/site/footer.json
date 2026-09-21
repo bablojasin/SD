@@ -1,0 +1,34 @@
+{
+  "footerLogo": "/logo.svg",
+  "companyDescription": "SPECTRE DEFEND delivers autonomous zero-trust cyber defense, high-frequency threat isolation, and 24/7 sovereign SOC surveillance protecting modern enterprise infrastructure.",
+  "contactEmail": "defense@spectredefend.com",
+  "contactPhone": "[REQUIRES BUSINESS CONFIRMATION]",
+  "address": "[REQUIRES BUSINESS CONFIRMATION]",
+  "quickLinks": [
+    { "label": "About Us", "href": "/about" },
+    { "label": "Our Services", "href": "/services" },
+    { "label": "Leadership Team", "href": "/team" },
+    { "label": "Threat Insights", "href": "/blog" },
+    { "label": "Contact SecOps", "href": "/contact" }
+  ],
+  "servicesLinks": [
+    { "label": "Threat Detection & Response", "href": "/services/threat-detection" },
+    { "label": "Network Security", "href": "/services/network-security" },
+    { "label": "Cloud Security", "href": "/services/cloud-security" },
+    { "label": "Vulnerability Assessment", "href": "/services/vulnerability-assessment" },
+    { "label": "Penetration Testing", "href": "/services/penetration-testing" },
+    { "label": "24/7 Security Monitoring", "href": "/services/security-monitoring" }
+  ],
+  "legalLinks": [
+    { "label": "Privacy Policy", "href": "/privacy" },
+    { "label": "Terms of Service", "href": "/terms" },
+    { "label": "Refund Policy", "href": "/refund-policy" },
+    { "label": "Cookie Policy", "href": "/cookie-policy" },
+    { "label": "Decap CMS Portal", "href": "/admin/" }
+  ],
+  "newsletterHeading": "Threat Intelligence Wire",
+  "newsletterDescription": "Receive high-severity vulnerability advisories and red-team technical briefs.",
+  "ctaText": "Deploy Enterprise Defense",
+  "ctaLink": "/contact",
+  "copyright": "© 2026 SPECTRE DEFEND. All rights reserved."
+}

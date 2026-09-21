@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>SPECTRE DEFEND Content Management Portal • Decap CMS</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      :root {
+        --brand-accent: #b7ff00;
+        --brand-dark: #050807;
+        --brand-surface: #0a0f0a;
+      }
+      body {
+        margin: 0;
+        background-color: var(--brand-dark);
+        color: #e9ece8;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+      /* Custom banner for authenticated security portal */
+      #cms-auth-notice {
+        display: none;
+        padding: 10px 16px;
+        background: #0d160f;
+        border-bottom: 1px solid rgba(183, 255, 0, 0.2);
+        color: #b7ff00;
+        font-family: monospace;
+        font-size: 12px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cms-auth-notice">
+      [SECOPS PORTAL] Authenticated GitHub Session • Decap CMS v3.3.3 • Direct Repository Synchronization
+    </div>
+    <!-- Decap CMS official script -->
+    <script src="https://unpkg.com/decap-cms@^3.3.3/dist/decap-cms.js"></script>
+    <script>
+      // Display authenticated banner on initialization
+      if (window.CMS) {
+        document.getElementById('cms-auth-notice').style.display = 'block';
+      }
+    </script>
+  </body>
+</html>

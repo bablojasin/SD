@@ -1,0 +1,26 @@
+{
+  "siteName": "SPECTRE DEFEND",
+  "siteTitle": "SPECTRE DEFEND | Cybersecurity Solutions & Digital Security",
+  "siteDescription": "Protect enterprise infrastructure with SPECTRE DEFEND's autonomous zero-trust cyber defense, high-speed telemetry, continuous threat detection, and 24/7 sovereign SOC operations.",
+  "siteUrl": "https://spectredefend.com",
+  "defaultTitle": "SPECTRE DEFEND | Cybersecurity Solutions & Digital Security",
+  "titleTemplate": "%s | SPECTRE DEFEND",
+  "defaultDescription": "Protect enterprise infrastructure with SPECTRE DEFEND's autonomous zero-trust cyber defense, high-speed telemetry, continuous threat detection, and 24/7 sovereign SOC operations.",
+  "defaultOgImage": "/images/og-spectre-defend.jpg",
+  "defaultSocialImage": "/images/og-spectre-defend.jpg",
+  "organizationName": "SPECTRE DEFEND",
+  "organizationDescription": "SPECTRE DEFEND delivers autonomous zero-trust cyber defense, continuous threat detection, and sovereign security operations for modern enterprise infrastructure.",
+  "organizationLogo": "https://spectredefend.com/logo.svg",
+  "twitterHandle": "@spectredefend",
+  "googleSiteVerification": "",
+  "bingSiteVerification": "",
+  "phone": "+1 (800) 412-CYBER",
+  "email": "defense@spectredefend.com",
+  "address": "742 Evergreen SecOps Boulevard, Suite 500, San Francisco, CA 94107",
+  "socialProfiles": [
+    "https://twitter.com/spectredefend",
+    "https://github.com/spectredefend",
+    "https://linkedin.com/company/spectredefend",
+    "https://discord.gg/spectredefend"
+  ]
+}

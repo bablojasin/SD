@@ -1,0 +1,16 @@
+brand_name: "SPECTRE DEFEND"
+legal_name: "SPECTRE DEFEND Inc."
+tagline: "Autonomous Enterprise Cyber Defense & Zero-Trust Intelligence"
+logo:
+  master: "/assets/brand/spectre-defend-logo.svg"
+  symbol: "/assets/brand/spectre-defend-logo-symbol.svg"
+  dark: "/assets/brand/spectre-defend-logo-dark.svg"
+  light: "/assets/brand/spectre-defend-logo-light.svg"
+  white: "/assets/brand/spectre-defend-logo-white.svg"
+  black: "/assets/brand/spectre-defend-logo-black.svg"
+  favicon: "/assets/brand/spectre-defend-favicon.svg"
+colors:
+  primary: "#B7FF00"
+  secondary: "#050807"
+  text_dark: "#050807"
+  text_light: "#FFFFFF"

@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /callback/
+
+# AI Search & Indexing Crawlers (Explicitly Allowed for Discoverability)
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /callback/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /callback/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /callback/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /callback/
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /callback/
+
+Sitemap: https://spectredefend.com/sitemap.xml

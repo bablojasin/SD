@@ -1,0 +1,14 @@
+{
+  "name": "spectre-defend-oauth-worker",
+  "version": "2.0.0",
+  "description": "Cloudflare Worker OAuth Authentication Server for SPECTRE DEFEND & Decap CMS",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "keywords": ["decap-cms", "oauth", "github-oauth", "cloudflare-workers", "spectre-defend"],
+  "author": "SPECTRE DEFEND SecOps",
+  "license": "MIT"
+}

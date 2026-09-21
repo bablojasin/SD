@@ -1,0 +1,14 @@
+{
+  "name": "Elena Rostova",
+  "slug": "elena-rostova",
+  "position": "Chief Technology Officer",
+  "profileImage": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+  "shortBiography": "Pioneered kernel-level eBPF behavioral telemetry frameworks protecting multi-tenant cloud workloads at hyper-scale.",
+  "fullBiography": "Elena oversees engineering and platform architecture at SPECTRE DEFEND. With deep roots in distributed systems security and cloud-native hypervisors, she led the development of SPECTRE DEFEND's sub-12ms quarantine pipeline. Previously, she directed kernel engineering for global hyperscale cloud providers.",
+  "email": "e.rostova@spectredefend.com",
+  "linkedin": "https://linkedin.com/in/elena-rostova-tech",
+  "twitter": "https://twitter.com/elena_cyber_cto",
+  "github": "https://github.com/elena-rostova",
+  "displayOrder": 2,
+  "isFeatured": true
+}

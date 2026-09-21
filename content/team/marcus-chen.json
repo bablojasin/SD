@@ -1,0 +1,14 @@
+{
+  "name": "Marcus Chen",
+  "slug": "marcus-chen",
+  "position": "Head of Red Team & Adversary Simulation",
+  "profileImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+  "shortBiography": "Offensive exploit engineer leading adversary emulation, supply-chain intrusion modeling, and defensive gap analysis.",
+  "fullBiography": "Marcus leads SPECTRE DEFEND's ethical adversary emulation division. Holding multiple CVE credits and world-class CTF titles, Marcus stress-tests critical production nodes to expose latent logic flaws before malicious actors can discover them.",
+  "email": "m.chen@spectredefend.com",
+  "linkedin": "https://linkedin.com/in/marcus-chen-redteam",
+  "twitter": "https://twitter.com/marcuschen_sec",
+  "github": "https://github.com/marcuschen",
+  "displayOrder": 5,
+  "isFeatured": false
+}

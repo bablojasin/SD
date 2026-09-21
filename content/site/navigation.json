@@ -1,0 +1,14 @@
+{
+  "mainNav": [
+    { "label": "Home", "href": "/", "openInNewTab": false, "isVisible": true },
+    { "label": "About Us", "href": "/about", "openInNewTab": false, "isVisible": true },
+    { "label": "Services", "href": "/services", "openInNewTab": false, "isVisible": true },
+    { "label": "Team", "href": "/team", "openInNewTab": false, "isVisible": true },
+    { "label": "Insights", "href": "/blog", "openInNewTab": false, "isVisible": true },
+    { "label": "Contact", "href": "/contact", "openInNewTab": false, "isVisible": true }
+  ],
+  "primaryCta": {
+    "label": "Get Started",
+    "href": "/contact"
+  }
+}
