@@ -50,7 +50,7 @@ export const SEO: React.FC<SEOProps> = ({
   const siteSettings = getSiteSettings();
 
   const brandName = seoConfig.siteName || siteSettings.siteName || 'SPECTRE DEFEND';
-  const baseUrl = (seoConfig.siteUrl || siteSettings.siteUrl || 'https://spectredefend.com').replace(/\/$/, '');
+  const baseUrl = (seoConfig.siteUrl || siteSettings.siteUrl || 'https://SpectreDefend.dpdns.org').replace(/\/$/, '');
 
   const finalTitle = title
     ? title.includes(brandName)

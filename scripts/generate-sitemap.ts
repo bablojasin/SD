@@ -5,7 +5,7 @@ function generateSitemap() {
   const rootDir = process.cwd();
   
   // 1. Read site SEO configuration for siteUrl
-  let siteUrl = 'https://spectredefend.com';
+  let siteUrl = 'https://SpectreDefend.dpdns.org';
   const seoConfigPath = path.join(rootDir, 'content/site/seo.json');
   if (fs.existsSync(seoConfigPath)) {
     try {
@@ -14,7 +14,7 @@ function generateSitemap() {
         siteUrl = seoData.siteUrl.replace(/\/$/, '');
       }
     } catch (e) {
-      console.warn('Could not parse seo.json, defaulting to https://spectredefend.com');
+      console.warn('Could not parse seo.json, defaulting to https://SpectreDefend.dpdns.org');
     }
   }
 

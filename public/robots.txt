@@ -35,4 +35,4 @@ Disallow: /admin/
 Disallow: /auth/
 Disallow: /callback/
 
-Sitemap: https://spectredefend.com/sitemap.xml
+Sitemap: https://SpectreDefend.dpdns.org/sitemap.xml

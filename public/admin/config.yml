@@ -3,14 +3,18 @@
 
 # Backend Configuration
 # The OAuth proxy Cloudflare Worker provides secure GitHub authentication without exposing secrets.
+# Configuration Placeholders (Replace with your actual values):
+# GITHUB_REPOSITORY_OWNER=REQUIRES_CONFIGURATION
+# GITHUB_REPOSITORY_NAME=REQUIRES_CONFIGURATION
+# GITHUB_BRANCH=main
+# WORKER_DOMAIN=REQUIRES_CONFIGURATION
 backend:
   name: github
-  # REPLACE with your GitHub repository: OWNER/REPOSITORY (e.g. spectredefend/website)
-  repo: OWNER/REPOSITORY
+  repo: GITHUB_REPOSITORY_OWNER/GITHUB_REPOSITORY_NAME
   branch: main
-  # Cloudflare Worker OAuth Proxy Base URL
-  # Replace with your deployed Cloudflare Worker domain (e.g. https://spectredefend-oauth.workers.dev)
-  base_url: https://spectredefend-oauth.workers.dev
+  # Cloudflare Worker OAuth Proxy Base URL (Do NOT include trailing slash)
+  # Replace with your deployed Cloudflare Worker domain e.g. https://spectre-defend-oauth-worker.<subdomain>.workers.dev
+  base_url: https://WORKER_DOMAIN
   auth_endpoint: auth
 
 # Local development backend support
@@ -21,8 +25,8 @@ media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 # Display Configuration
-site_url: "https://spectredefend.com"
-display_url: "https://spectredefend.com"
+site_url: "https://SpectreDefend.dpdns.org"
+display_url: "https://SpectreDefend.dpdns.org"
 logo_url: "/logo.svg"
 
 # Content Collections
