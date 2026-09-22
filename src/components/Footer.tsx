@@ -20,6 +20,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenScanner }) => 
               <img 
                 src="/assets/brand/spectre-defend-logo-symbol.svg" 
                 alt="SPECTRE DEFEND Symbol" 
+                width={36}
+                height={36}
+                loading="lazy"
+                decoding="async"
                 className="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-200" 
               />
               <div className="flex flex-col leading-none text-left">

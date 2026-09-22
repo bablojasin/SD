@@ -109,12 +109,23 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onSuccessPrompt }) => {
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-sm aspect-square rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-tr from-[#050807] to-white/[0.055] p-3 shadow-2xl group">
                 <div className="w-full h-full rounded-2xl overflow-hidden relative flex items-center justify-center bg-[#050807]">
-                  <img
-                    src={CTA_MAIL_IMAGE}
-                    alt="SPECTRE DEFEND Cyber Security Dispatch Alert"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  <picture className="w-full h-full">
+                    <source
+                      type="image/webp"
+                      srcSet="/images/cta_3d_mail_shield_1789575913648-480.webp 480w, /images/cta_3d_mail_shield_1789575913648-800.webp 800w, /images/cta_3d_mail_shield_1789575913648.webp 1200w"
+                      sizes="(max-width: 640px) 384px, 400px"
+                    />
+                    <img
+                      src="/images/cta_3d_mail_shield_1789575913648.webp"
+                      alt="SPECTRE DEFEND Cyber Security Dispatch Alert"
+                      width={1200}
+                      height={896}
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050807]/70 via-transparent to-transparent"></div>
                   
                   {/* Micro telemetry tag */}

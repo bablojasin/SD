@@ -69,8 +69,11 @@ export const Logo: React.FC<LogoProps> = ({
       <img
         src={logoSrc}
         alt={branding?.logoAltText || `${brandName} Emblem`}
+        width={40}
+        height={40}
         className={`${currentSize.box} object-contain transition-transform duration-300 group-hover:scale-105 shrink-0`}
         loading="eager"
+        decoding="async"
       />
 
       {/* Two-Line Futuristic Wordmark: SPECTRE over DEFEND */}

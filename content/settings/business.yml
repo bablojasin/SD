@@ -1,19 +1,20 @@
 # SPECTRE DEFEND — Verified Business Information
-# All unknown or unverified legal entities, addresses, and registration details
-# MUST use [REQUIRES BUSINESS CONFIRMATION] per compliance guidelines.
+# All unknown or unconfirmed details are set to "REQUIRES BUSINESS CONFIRMATION".
+# DO NOT invent corporate entities, registration numbers, tax IDs, or residential addresses.
 
-legalName: "[REQUIRES BUSINESS CONFIRMATION]"
+legalName: "REQUIRES BUSINESS CONFIRMATION"
 tradingName: "SPECTRE DEFEND"
-businessAddress: "[REQUIRES BUSINESS CONFIRMATION]"
-country: "[REQUIRES BUSINESS CONFIRMATION]"
-city: "[REQUIRES BUSINESS CONFIRMATION]"
-email: "defense@spectredefend.com"
-phone: "[REQUIRES BUSINESS CONFIRMATION]"
-whatsapp: "[REQUIRES BUSINESS CONFIRMATION]"
+businessType: "REQUIRES BUSINESS CONFIRMATION"
+country: "REQUIRES BUSINESS CONFIRMATION"
+province: "REQUIRES BUSINESS CONFIRMATION"
+city: "REQUIRES BUSINESS CONFIRMATION"
+businessAddress: "REQUIRES BUSINESS CONFIRMATION"
+registrationNumber: "REQUIRES BUSINESS CONFIRMATION"
+taxNumber: "REQUIRES BUSINESS CONFIRMATION"
+contactEmail: "REQUIRES BUSINESS CONFIRMATION"
+privacyEmail: "REQUIRES BUSINESS CONFIRMATION"
+legalEmail: "REQUIRES BUSINESS CONFIRMATION"
+supportEmail: "REQUIRES BUSINESS CONFIRMATION"
+phone: "REQUIRES BUSINESS CONFIRMATION"
+whatsapp: "REQUIRES BUSINESS CONFIRMATION"
 website: "https://SpectreDefend.dpdns.org"
-privacyEmail: "privacy@spectredefend.com"
-legalEmail: "legal@spectredefend.com"
-supportEmail: "support@spectredefend.com"
-registrationNumber: "[REQUIRES BUSINESS CONFIRMATION]"
-taxId: "[REQUIRES BUSINESS CONFIRMATION]"
-operatingHours: "24/7 Security Operations Telemetry"

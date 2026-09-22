@@ -30,6 +30,10 @@ export const Testimonial: React.FC<TestimonialProps> = ({
               <img
                 src={item.avatarUrl}
                 alt={item.name}
+                width={176}
+                height={176}
+                loading="lazy"
+                decoding="async"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
               />
@@ -60,6 +64,10 @@ export const Testimonial: React.FC<TestimonialProps> = ({
                 <img
                   src={item.avatarUrl}
                   alt={item.name}
+                  width={40}
+                  height={40}
+                  loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />

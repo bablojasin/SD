@@ -1,0 +1,20 @@
+name = "spectre-defend-oauth-worker"
+main = "src/index.js"
+compatibility_date = "2024-09-21"
+
+[vars]
+CMS_ORIGIN = "https://SpectreDefend.dpdns.org"
+ALLOWED_ORIGIN = "https://SpectreDefend.dpdns.org"
+GITHUB_OAUTH_CALLBACK_URL = "REQUIRES_WORKER_URL"
+GITHUB_REPOSITORY_OWNER = "REQUIRES_CONFIGURATION"
+GITHUB_REPOSITORY_NAME = "REQUIRES_CONFIGURATION"
+GITHUB_BRANCH = "main"
+
+# ==============================================================================
+# SECRETS (DO NOT COMMIT SECRETS HERE)
+#
+# Configure with Cloudflare Wrangler CLI:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET
+#   npx wrangler secret put NOTIFICATION_WEBHOOK_URL  (optional)
+# ==============================================================================

@@ -69,6 +69,10 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onCtaSuccess }) => {
                   <img
                     src={member.profileImage}
                     alt={`${member.name}, ${member.position} at SPECTRE DEFEND`}
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500"
                   />

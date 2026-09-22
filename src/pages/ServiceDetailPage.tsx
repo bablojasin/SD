@@ -115,12 +115,23 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onCtaSucce
 
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black">
-              <img
-                src={service.featuredImage}
-                alt={service.title}
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover"
-              />
+              <picture className="w-full h-full">
+                <source
+                  type="image/webp"
+                  srcSet={`${(service.featuredImage || '').replace(/\.(jpg|png)$/, '')}-480.webp 480w, ${(service.featuredImage || '').replace(/\.(jpg|png)$/, '')}-800.webp 800w, ${(service.featuredImage || '').replace(/\.(jpg|png)$/, '')}.webp 1200w`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                />
+                <img
+                  src={(service.featuredImage || '').replace(/\.(jpg|png)$/, '.webp')}
+                  alt={service.title}
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-[#050807]/70 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>

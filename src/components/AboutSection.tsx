@@ -39,12 +39,23 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.055] via-[#050807] to-[#050807] p-3 shadow-2xl group">
               <div className="w-full h-full rounded-2xl overflow-hidden relative flex items-center justify-center bg-[#050807]">
-                <img
-                  src={globeImage}
-                  alt="SPECTRE DEFEND 3D Global Cyber Shield"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                <picture className="w-full h-full">
+                  <source
+                    type="image/webp"
+                    srcSet="/images/about_3d_globe_1789575901855-480.webp 480w, /images/about_3d_globe_1789575901855-800.webp 800w, /images/about_3d_globe_1789575901855.webp 1024w"
+                    sizes="(max-width: 640px) 400px, 448px"
+                  />
+                  <img
+                    src="/images/about_3d_globe_1789575901855.webp"
+                    alt="SPECTRE DEFEND 3D Global Cyber Shield"
+                    width={1024}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </picture>
 
                 {/* Cyber Matrix Ring Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050807]/80 via-transparent to-transparent"></div>

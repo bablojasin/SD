@@ -102,12 +102,23 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onCtaSuccess }) => {
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
               <div className="lg:col-span-7 aspect-[16/10] overflow-hidden bg-[#050807]">
-                <img
-                  src={featuredPost.featuredImage || featuredPost.imageUrl}
-                  alt={featuredPost.imageAlt || featuredPost.title}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                <picture className="w-full h-full">
+                  <source
+                    type="image/webp"
+                    srcSet={`${(featuredPost.featuredImage || featuredPost.imageUrl || '').replace(/\.(jpg|png)$/, '')}-480.webp 480w, ${(featuredPost.featuredImage || featuredPost.imageUrl || '').replace(/\.(jpg|png)$/, '')}-800.webp 800w, ${(featuredPost.featuredImage || featuredPost.imageUrl || '').replace(/\.(jpg|png)$/, '')}.webp 1200w`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 700px"
+                  />
+                  <img
+                    src={(featuredPost.featuredImage || featuredPost.imageUrl || '').replace(/\.(jpg|png)$/, '.webp')}
+                    alt={featuredPost.imageAlt || featuredPost.title}
+                    width={1200}
+                    height={750}
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </picture>
               </div>
 
               <div className="lg:col-span-5 p-8 lg:p-10 space-y-4">

@@ -55,12 +55,23 @@ export const BlogSection: React.FC = () => {
               <div>
                 {/* Large Cybersecurity Image */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#050807]">
-                  <img
-                    src={post.featuredImage || post.imageUrl}
-                    alt={post.imageAlt || post.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700 ease-out"
-                  />
+                  <picture className="w-full h-full">
+                    <source
+                      type="image/webp"
+                      srcSet={`${(post.featuredImage || post.imageUrl || '').replace(/\.(jpg|png)$/, '')}-480.webp 480w, ${(post.featuredImage || post.imageUrl || '').replace(/\.(jpg|png)$/, '')}-800.webp 800w, ${(post.featuredImage || post.imageUrl || '').replace(/\.(jpg|png)$/, '')}.webp 1200w`}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                    />
+                    <img
+                      src={(post.featuredImage || post.imageUrl || '').replace(/\.(jpg|png)$/, '.webp')}
+                      alt={post.imageAlt || post.title}
+                      width={800}
+                      height={500}
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700 ease-out"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#070A08] via-transparent to-transparent pointer-events-none" />
                 </div>
 

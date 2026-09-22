@@ -196,12 +196,23 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ onCtaSuccess }) => {
 
         {/* Featured Image */}
         <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden border border-white/10 mb-12 shadow-2xl bg-black">
-          <img
-            src={post.featuredImage || post.imageUrl}
-            alt={post.imageAlt || post.title}
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-cover"
-          />
+          <picture className="w-full h-full">
+            <source
+              type="image/webp"
+              srcSet={`${(post.featuredImage || post.imageUrl || '').replace(/\.(jpg|png)$/, '')}-480.webp 480w, ${(post.featuredImage || post.imageUrl || '').replace(/\.(jpg|png)$/, '')}-800.webp 800w, ${(post.featuredImage || post.imageUrl || '').replace(/\.(jpg|png)$/, '')}.webp 1200w`}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1000px"
+            />
+            <img
+              src={(post.featuredImage || post.imageUrl || '').replace(/\.(jpg|png)$/, '.webp')}
+              alt={post.imageAlt || post.title}
+              width={1200}
+              height={675}
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-[#050807]/60 via-transparent to-transparent pointer-events-none" />
         </div>
 

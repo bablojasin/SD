@@ -1,22 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
 import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
-import { ServicesPage } from './pages/ServicesPage';
-import { ServiceDetailPage } from './pages/ServiceDetailPage';
-import { TeamPage } from './pages/TeamPage';
-import { BlogPage } from './pages/BlogPage';
-import { BlogPostPage } from './pages/BlogPostPage';
-import { ContactPage } from './pages/ContactPage';
-import { LegalPage } from './pages/LegalPage';
-import { NotFoundPage } from './pages/NotFoundPage';
 import { ThreatScannerModal } from './components/ThreatScannerModal';
 import { ServiceDetailModal } from './components/ServiceDetailModal';
 import { CookieConsent } from './components/common/CookieConsent';
 import { ServiceItem } from './types';
 import { ShieldCheck, Bell, X } from 'lucide-react';
+
+// Lazy-loaded secondary route chunks for fast initial load
+const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
+const ServicesPage = lazy(() => import('./pages/ServicesPage').then(m => ({ default: m.ServicesPage })));
+const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage').then(m => ({ default: m.ServiceDetailPage })));
+const TeamPage = lazy(() => import('./pages/TeamPage').then(m => ({ default: m.TeamPage })));
+const BlogPage = lazy(() => import('./pages/BlogPage').then(m => ({ default: m.BlogPage })));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage').then(m => ({ default: m.BlogPostPage })));
+const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
+const LegalPage = lazy(() => import('./pages/LegalPage').then(m => ({ default: m.LegalPage })));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
+
+// Minimal route fallback spinner
+const RouteFallback = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="w-8 h-8 rounded-full border-2 border-white/10 border-t-[#B7FF00] animate-spin" />
+  </div>
+);
 
 // Scroll to top on navigation change
 function ScrollToTop() {
@@ -67,76 +76,78 @@ export default function App() {
 
         {/* Dynamic Route Pages */}
         <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <HomePage
-                  onOpenScanner={() => setScannerOpen(true)}
-                  onSelectService={(svc) => setSelectedService(svc)}
-                  onCtaSuccess={handleCtaSubmit}
-                />
-              }
-            />
-            <Route
-              path="/about"
-              element={<AboutPage onCtaSuccess={handleCtaSubmit} />}
-            />
-            <Route
-              path="/services"
-              element={
-                <ServicesPage
-                  onSelectService={(svc) => setSelectedService(svc)}
-                  onCtaSuccess={handleCtaSubmit}
-                />
-              }
-            />
-            <Route
-              path="/services/:slug"
-              element={<ServiceDetailPage onCtaSuccess={handleCtaSubmit} />}
-            />
-            <Route
-              path="/team"
-              element={<TeamPage onCtaSuccess={handleCtaSubmit} />}
-            />
-            <Route
-              path="/blog"
-              element={<BlogPage onCtaSuccess={handleCtaSubmit} />}
-            />
-            <Route
-              path="/blog/:slug"
-              element={<BlogPostPage onCtaSuccess={handleCtaSubmit} />}
-            />
-            <Route
-              path="/contact"
-              element={<ContactPage onCtaSuccess={handleCtaSubmit} />}
-            />
-            <Route
-              path="/privacy"
-              element={<LegalPage />}
-            />
-            <Route
-              path="/terms"
-              element={<LegalPage />}
-            />
-            <Route
-              path="/cookies"
-              element={<LegalPage />}
-            />
-            <Route
-              path="/cookie-policy"
-              element={<LegalPage />}
-            />
-            <Route
-              path="/refund-policy"
-              element={<LegalPage />}
-            />
-            {/* 404 Route */}
-            <Route
-              path="*"
-              element={<NotFoundPage />}
-            />
-          </Routes>
+          <Suspense fallback={<RouteFallback />}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <HomePage
+                    onOpenScanner={() => setScannerOpen(true)}
+                    onSelectService={(svc) => setSelectedService(svc)}
+                    onCtaSuccess={handleCtaSubmit}
+                  />
+                }
+              />
+              <Route
+                path="/about"
+                element={<AboutPage onCtaSuccess={handleCtaSubmit} />}
+              />
+              <Route
+                path="/services"
+                element={
+                  <ServicesPage
+                    onSelectService={(svc) => setSelectedService(svc)}
+                    onCtaSuccess={handleCtaSubmit}
+                  />
+                }
+              />
+              <Route
+                path="/services/:slug"
+                element={<ServiceDetailPage onCtaSuccess={handleCtaSubmit} />}
+              />
+              <Route
+                path="/team"
+                element={<TeamPage onCtaSuccess={handleCtaSubmit} />}
+              />
+              <Route
+                path="/blog"
+                element={<BlogPage onCtaSuccess={handleCtaSubmit} />}
+              />
+              <Route
+                path="/blog/:slug"
+                element={<BlogPostPage onCtaSuccess={handleCtaSubmit} />}
+              />
+              <Route
+                path="/contact"
+                element={<ContactPage onCtaSuccess={handleCtaSubmit} />}
+              />
+              <Route
+                path="/privacy"
+                element={<LegalPage />}
+              />
+              <Route
+                path="/terms"
+                element={<LegalPage />}
+              />
+              <Route
+                path="/cookies"
+                element={<LegalPage />}
+              />
+              <Route
+                path="/cookie-policy"
+                element={<LegalPage />}
+              />
+              <Route
+                path="/refund-policy"
+                element={<LegalPage />}
+              />
+              {/* 404 Route */}
+              <Route
+                path="*"
+                element={<NotFoundPage />}
+              />
+            </Routes>
+          </Suspense>
         </main>
 
         {/* Persistent Reusable Footer */}

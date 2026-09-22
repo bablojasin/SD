@@ -76,6 +76,10 @@ export const TestimonialsSection: React.FC = () => {
                   <img
                     src={current.avatarUrl}
                     alt={current.name}
+                    width={216}
+                    height={216}
+                    loading="lazy"
+                    decoding="async"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
                   />

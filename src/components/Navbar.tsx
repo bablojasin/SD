@@ -39,6 +39,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenScanner, onNavigate }) => 
           <img 
             src="/assets/brand/spectre-defend-logo-symbol.svg" 
             alt="SPECTRE DEFEND Symbol" 
+            width={36}
+            height={36}
+            loading="eager"
+            decoding="async"
             className="w-8.5 h-8.5 sm:w-9 sm:h-9 object-contain group-hover:scale-105 transition-transform duration-200" 
           />
           <div className="flex flex-col leading-none text-left">

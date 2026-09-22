@@ -52,12 +52,23 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border border-white/10 bg-[#050807] p-3 shadow-2xl">
-              <img
-                src={heroImage}
-                alt="SPECTRE DEFEND 3D Global Cyber Shield"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover rounded-2xl"
-              />
+              <picture className="w-full h-full">
+                <source
+                  type="image/webp"
+                  srcSet="/images/about_3d_globe_1789575901855-480.webp 480w, /images/about_3d_globe_1789575901855-800.webp 800w, /images/about_3d_globe_1789575901855.webp 1024w"
+                  sizes="(max-width: 640px) 400px, 448px"
+                />
+                <img
+                  src="/images/about_3d_globe_1789575901855.webp"
+                  alt="SPECTRE DEFEND 3D Global Cyber Shield"
+                  width={1024}
+                  height={1024}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </picture>
             </div>
           </div>
 
@@ -112,12 +123,23 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
 
             <div className="lg:col-span-6">
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <img
-                  src={SOC_ROOM_IMAGE}
-                  alt="SPECTRE DEFEND Cyber Defense Security Operations Center"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
-                />
+                <picture className="w-full h-full">
+                  <source
+                    type="image/webp"
+                    srcSet="/images/soc_war_room_1789575925158-480.webp 480w, /images/soc_war_room_1789575925158-800.webp 800w, /images/soc_war_room_1789575925158.webp 1376w"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                  />
+                  <img
+                    src="/images/soc_war_room_1789575925158.webp"
+                    alt="SPECTRE DEFEND Cyber Defense Security Operations Center"
+                    width={1376}
+                    height={768}
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -153,6 +175,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
                   <img
                     src={member.profileImage}
                     alt={`${member.name}, ${member.position} at SPECTRE DEFEND`}
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

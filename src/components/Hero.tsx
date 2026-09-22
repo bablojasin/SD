@@ -168,12 +168,24 @@ export const Hero: React.FC<HeroProps> = ({ onStartProtection, onSelectService }
                 className="pointer-events-none absolute inset-4 bg-gradient-to-tr from-[#B7FF00]/20 via-emerald-600/10 to-transparent rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-700"
               />
 
-              <img
-                src={heroImageSrc}
-                alt={hero.imageAlt || "SPECTRE DEFEND 3D Cyber-Defense Shield with Heavy Metallic Padlock"}
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-contain object-center drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/images/hero_cyber_defense_shield_1789577844799-480.webp 480w, /images/hero_cyber_defense_shield_1789577844799-800.webp 800w, /images/hero_cyber_defense_shield_1789577844799-1200.webp 1200w, /images/hero_cyber_defense_shield_1789577844799.webp 1200w"
+                  sizes="(max-width: 640px) 390px, (max-width: 1024px) 480px, 530px"
+                />
+                <img
+                  src="/images/hero_cyber_defense_shield_1789577844799.webp"
+                  alt={hero.imageAlt || "SPECTRE DEFEND 3D Cyber-Defense Shield with Heavy Metallic Padlock"}
+                  width={1200}
+                  height={896}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-contain object-center drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                />
+              </picture>
 
               {/* Bottom HUD Badge: Positioned at the pedestal base */}
               <div className="absolute -bottom-2 sm:bottom-1 left-2 sm:left-6 lg:left-0 xl:left-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#070B08]/95 border border-[#B7FF00]/40 shadow-xl shadow-black text-[9.5px] sm:text-[10.5px] font-mono text-[#B7FF00] z-20">

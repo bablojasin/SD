@@ -45,12 +45,23 @@ export const MetricsBento: React.FC = () => {
           {/* Card 1: SOC Command Center (Large 6 cols / span 2 rows) */}
           <div className="lg:col-span-6 rounded-3xl overflow-hidden border border-white/10 bg-white/[0.055] p-3 flex flex-col justify-between shadow-2xl relative group backdrop-blur-xl">
             <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-[#050807]">
-              <img
-                src={SOC_ROOM_IMAGE}
-                alt="SPECTRE DEFEND Global SOC Cyber Command Room"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
-              />
+              <picture className="w-full h-full">
+                <source
+                  type="image/webp"
+                  srcSet="/images/soc_war_room_1789575925158-480.webp 480w, /images/soc_war_room_1789575925158-800.webp 800w, /images/soc_war_room_1789575925158.webp 1376w"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                />
+                <img
+                  src="/images/soc_war_room_1789575925158.webp"
+                  alt="SPECTRE DEFEND Global SOC Cyber Command Room"
+                  width={1376}
+                  height={768}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-[#050807] via-[#050807]/30 to-transparent"></div>
 
               {/* Live Status indicator */}

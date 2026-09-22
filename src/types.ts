@@ -39,9 +39,15 @@ export interface SiteSettings {
 export interface BusinessInfo {
   legalName: string;
   tradingName: string;
-  businessAddress: string;
+  businessType?: string;
   country: string;
+  province?: string;
   city: string;
+  businessAddress: string;
+  registrationNumber: string;
+  taxNumber?: string;
+  taxId?: string;
+  contactEmail?: string;
   email: string;
   phone: string;
   whatsapp: string;
@@ -49,9 +55,7 @@ export interface BusinessInfo {
   privacyEmail: string;
   legalEmail: string;
   supportEmail: string;
-  registrationNumber: string;
-  taxId: string;
-  operatingHours: string;
+  operatingHours?: string;
 }
 
 export interface NavItem {
