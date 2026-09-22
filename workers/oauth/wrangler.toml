@@ -5,8 +5,8 @@ compatibility_date = "2024-01-01"
 
 # Environmental variables (Non-sensitive)
 [vars]
-# Replace with your production site origin or Decap CMS admin URL
-ALLOWED_ORIGIN = "https://spectredefend.com"
+ALLOWED_ORIGIN = "https://SpectreDefend.dpdns.org"
+CMS_ORIGIN = "https://SpectreDefend.dpdns.org"
 
 # SECRETS CONFIGURATION NOTICE:
 # The following secrets MUST be set via Wrangler CLI or Cloudflare Dashboard:

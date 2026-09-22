@@ -7,12 +7,13 @@
  * Requirements in Cloudflare Environment:
  * - env.GITHUB_CLIENT_ID (Secret: wrangler secret put GITHUB_CLIENT_ID)
  * - env.GITHUB_CLIENT_SECRET (Secret: wrangler secret put GITHUB_CLIENT_SECRET)
- * - env.ALLOWED_ORIGIN (Optional var: e.g. "https://spectredefend.com")
+ * - env.CMS_ORIGIN or env.ALLOWED_ORIGIN (Optional var: defaults to "https://SpectreDefend.dpdns.org")
  */
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    const allowedOrigin = env.CMS_ORIGIN || env.ALLOWED_ORIGIN || 'https://SpectreDefend.dpdns.org';
 
     // Common security response headers
     const baseSecurityHeaders = {
@@ -25,12 +26,20 @@ export default {
 
     // 1. Health check & status route
     if (url.pathname === '/' || url.pathname === '/health') {
+      if (request.method !== 'GET') {
+        return new Response('Method Not Allowed', {
+          status: 405,
+          headers: { ...baseSecurityHeaders, Allow: 'GET' },
+        });
+      }
+
       return new Response(
         JSON.stringify(
           {
             service: 'SPECTRE DEFEND GitHub OAuth Proxy',
             status: 'operational',
-            version: '2.0.0',
+            version: '2.1.0',
+            cmsOrigin: allowedOrigin,
             endpoints: ['/auth', '/callback', '/contact'],
             timestamp: new Date().toISOString(),
           },
@@ -50,6 +59,22 @@ export default {
 
     // 2. /auth endpoint -> Initiates OAuth flow
     if (url.pathname === '/auth') {
+      if (request.method !== 'GET') {
+        return new Response('Method Not Allowed', {
+          status: 405,
+          headers: { ...baseSecurityHeaders, Allow: 'GET' },
+        });
+      }
+
+      // Security: Validate origin if present
+      const reqOrigin = request.headers.get('Origin');
+      if (reqOrigin && reqOrigin !== allowedOrigin) {
+        return new Response(JSON.stringify({ error: 'Origin not allowed' }), {
+          status: 403,
+          headers: { ...baseSecurityHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
       const clientId = env.GITHUB_CLIENT_ID;
       if (!clientId) {
         return new Response(
@@ -104,6 +129,13 @@ export default {
 
     // 3. /callback endpoint -> Exchanges authorization code for access token
     if (url.pathname === '/callback') {
+      if (request.method !== 'GET') {
+        return new Response('Method Not Allowed', {
+          status: 405,
+          headers: { ...baseSecurityHeaders, Allow: 'GET' },
+        });
+      }
+
       const code = url.searchParams.get('code');
       const error = url.searchParams.get('error');
       const errorDescription = url.searchParams.get('error_description');
@@ -114,7 +146,8 @@ export default {
         return renderPostMessage(
           'error',
           JSON.stringify({ error: errorDescription || error }),
-          baseSecurityHeaders
+          baseSecurityHeaders,
+          allowedOrigin
         );
       }
 
@@ -123,7 +156,8 @@ export default {
         return renderPostMessage(
           'error',
           JSON.stringify({ error: 'Missing authorization code from GitHub callback.' }),
-          baseSecurityHeaders
+          baseSecurityHeaders,
+          allowedOrigin
         );
       }
 
@@ -136,7 +170,8 @@ export default {
         return renderPostMessage(
           'error',
           JSON.stringify({ error: 'CSRF state verification failed. Session expired or untrusted.' }),
-          baseSecurityHeaders
+          baseSecurityHeaders,
+          allowedOrigin
         );
       }
 
@@ -149,7 +184,8 @@ export default {
           JSON.stringify({
             error: 'Server misconfiguration: GITHUB_CLIENT_ID or GITHUB_CLIENT_SECRET missing in Worker.',
           }),
-          baseSecurityHeaders
+          baseSecurityHeaders,
+          allowedOrigin
         );
       }
 
@@ -162,7 +198,7 @@ export default {
             headers: {
               'Content-Type': 'application/json',
               Accept: 'application/json',
-              'User-Agent': 'Spectre-Defend-Cloudflare-OAuth-Worker/2.0',
+              'User-Agent': 'Spectre-Defend-Cloudflare-OAuth-Worker/2.1',
             },
             body: JSON.stringify({
               client_id: clientId,
@@ -176,7 +212,8 @@ export default {
           return renderPostMessage(
             'error',
             JSON.stringify({ error: `GitHub API returned HTTP ${tokenResponse.status}` }),
-            baseSecurityHeaders
+            baseSecurityHeaders,
+            allowedOrigin
           );
         }
 
@@ -186,7 +223,8 @@ export default {
           return renderPostMessage(
             'error',
             JSON.stringify({ error: data.error_description || data.error }),
-            baseSecurityHeaders
+            baseSecurityHeaders,
+            allowedOrigin
           );
         }
 
@@ -196,19 +234,19 @@ export default {
           provider: 'github',
         };
 
-        return renderPostMessage('success', JSON.stringify(tokenContent), baseSecurityHeaders);
+        return renderPostMessage('success', JSON.stringify(tokenContent), baseSecurityHeaders, allowedOrigin);
       } catch (err) {
         return renderPostMessage(
           'error',
           JSON.stringify({ error: 'Internal OAuth exchange failure.' }),
-          baseSecurityHeaders
+          baseSecurityHeaders,
+          allowedOrigin
         );
       }
     }
 
     // 4. /contact endpoint -> Form submission handling
     if (url.pathname === '/contact') {
-      const allowedOrigin = env.ALLOWED_ORIGIN || '*';
       const corsHeaders = {
         'Access-Control-Allow-Origin': allowedOrigin,
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -228,6 +266,7 @@ export default {
           headers: {
             ...baseSecurityHeaders,
             ...corsHeaders,
+            Allow: 'POST, OPTIONS',
             'Content-Type': 'application/json',
           },
         });
@@ -319,9 +358,10 @@ export default {
 };
 
 /**
- * Returns clean HTML with postMessage communication protocol for Decap CMS
+ * Returns clean HTML with postMessage communication protocol for Decap CMS,
+ * strictly bounded to the authorized CMS origin.
  */
-function renderPostMessage(status, content, securityHeaders) {
+function renderPostMessage(status, content, securityHeaders, targetOrigin) {
   // Sanitize content against script injection
   const safeContent = content.replace(/</g, '\\u003c').replace(/>/g, '\\u003e');
 
@@ -364,16 +404,26 @@ function renderPostMessage(status, content, securityHeaders) {
   </div>
   <script>
     (function() {
+      var target = "${targetOrigin}";
+      if (!window.opener) {
+        document.querySelector('.status').textContent = "ERROR: NO PARENT CMS WINDOW DETECTED";
+        return;
+      }
+      function deliver() {
+        try {
+          window.opener.postMessage('authorization:github:${status}:${safeContent}', target);
+        } catch(e) {}
+      }
       function receiveMessage(e) {
-        window.opener.postMessage(
-          'authorization:github:${status}:${safeContent}',
-          e.origin
-        );
+        if (e.origin !== target) return;
+        deliver();
         window.removeEventListener("message", receiveMessage, false);
-        window.close();
+        setTimeout(function() { window.close(); }, 300);
       }
       window.addEventListener("message", receiveMessage, false);
-      window.opener.postMessage("authorizing:github", "*");
+      window.opener.postMessage("authorizing:github", target);
+      deliver();
+      setTimeout(function() { window.close(); }, 4000);
     })();
   </script>
 </body>

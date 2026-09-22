@@ -5,7 +5,8 @@
   "compatibility_date": "2024-09-21",
   "vars": {
     // Production frontend URL allowed for CORS/Origin validation
-    "ALLOWED_ORIGIN": "https://spectredefend.com"
+    "ALLOWED_ORIGIN": "https://SpectreDefend.dpdns.org",
+    "CMS_ORIGIN": "https://SpectreDefend.dpdns.org"
   },
   // IMPORTANT:
   // Do NOT write plaintext secrets in this configuration file.

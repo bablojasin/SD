@@ -40,7 +40,7 @@ const defaultBranding: BrandingConfig = {
 const defaultSiteSettings: SiteSettings = {
   siteName: 'SPECTRE DEFEND',
   tagline: 'Autonomous Cyber Defense & Zero-Trust Intelligence',
-  siteUrl: 'https://spectredefend.com',
+  siteUrl: 'https://SpectreDefend.dpdns.org',
   logoText: 'SPECTRE DEFEND',
   logoImage: '/logo.svg',
   favicon: '/favicon.svg',
@@ -110,11 +110,11 @@ const defaultSEO: SEOConfig = {
   titleTemplate: '%s | SPECTRE DEFEND',
   defaultDescription:
     'Protect enterprise infrastructure with SPECTRE DEFEND autonomous zero-trust cyber defense, high-speed telemetry, continuous threat detection, and 24/7 sovereign SOC operations.',
-  siteUrl: 'https://spectredefend.com',
+  siteUrl: 'https://SpectreDefend.dpdns.org',
   defaultOgImage: '/src/assets/images/hero_cyber_defense_shield_1789577844799.jpg',
   twitterHandle: '@spectredefend',
   organizationName: 'SPECTRE DEFEND',
-  organizationLogo: 'https://spectredefend.com/logo.svg',
+  organizationLogo: 'https://SpectreDefend.dpdns.org/logo.svg',
 };
 
 // Safe Getters
@@ -152,7 +152,7 @@ export function getBusinessInfo(): import('../types').BusinessInfo {
     email: 'defense@spectredefend.com',
     phone: '[REQUIRES BUSINESS CONFIRMATION]',
     whatsapp: '[REQUIRES BUSINESS CONFIRMATION]',
-    website: 'https://spectredefend.com',
+    website: 'https://SpectreDefend.dpdns.org',
     privacyEmail: 'privacy@spectredefend.com',
     legalEmail: 'legal@spectredefend.com',
     supportEmail: 'support@spectredefend.com',

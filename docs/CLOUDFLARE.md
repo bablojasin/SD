@@ -1,93 +1,136 @@
-# SPECTRE DEFEND • Cloudflare Configuration & DNS Architecture
+# SPECTRE DEFEND • Cloudflare Configuration Guide
 
-## 1. Cloudflare Role & Responsibilities
-
-Cloudflare acts as the edge perimeter for the SPECTRE DEFEND infrastructure:
-- **Anycast DNS**: Routes visitor traffic to the nearest global point of presence.
-- **SSL/TLS Encryption**: Enforces end-to-end encryption between visitor, Cloudflare edge, and GitHub Pages.
-- **Edge Caching & CDN**: Caches static assets (images, JavaScript, CSS) while bypassing dynamic endpoints.
-- **OAuth Worker**: Executes serverless GitHub OAuth token exchange for Decap CMS authors.
-- **Web Application Firewall (WAF)**: Mitigates DDoS attacks and malicious bot traffic.
+This guide details the network architecture, DNS setup, SSL/TLS security, and Cloudflare Worker routing for **SPECTRE DEFEND** using the production custom domain **`SpectreDefend.dpdns.org`**.
 
 ---
 
-## 2. DNS Record Configuration
+## 1. Architectural Separation
 
-Configure the following DNS records in the Cloudflare Dashboard for your domain (`spectredefend.com`):
+The deployment infrastructure clearly separates three discrete operational layers:
 
-### A. Root Apex & WWW Records (Pointing to GitHub Pages)
+```
+[ Visitor / CMS Author ]
+           │
+           ▼
+[ Cloudflare Edge Layer ]
+   ├── DNS Resolution & Edge Routing
+   ├── TLS Termination & WAF
+   └── Edge Cache (Rules for Static vs Dynamic/Admin)
+           │
+   ┌───────┴─────────────────────────┐
+   │                                 │
+   ▼                                 ▼
+[ Layer 1: GitHub Pages ]   [ Layer 2: Cloudflare Worker ]
+• Target: GITHUB_PAGES_TARGET • Domain: WORKER_DOMAIN
+• Serves Static SPA Website  • Executes GitHub OAuth Token Exchange
+• Serves Decap CMS (/admin/) • Handles /auth and /callback
+```
 
-| Type | Name | Content / Target | Proxy Status | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| **A** | `@` (apex) | `185.199.108.153` | Proxied (Orange Cloud) | GitHub Pages Anycast IP 1 |
-| **A** | `@` (apex) | `185.199.109.153` | Proxied (Orange Cloud) | GitHub Pages Anycast IP 2 |
-| **A** | `@` (apex) | `185.199.110.153` | Proxied (Orange Cloud) | GitHub Pages Anycast IP 3 |
-| **A** | `@` (apex) | `185.199.111.153` | Proxied (Orange Cloud) | GitHub Pages Anycast IP 4 |
-| **AAAA**| `@` (apex) | `2606:50c0:8000::153` | Proxied (Orange Cloud) | GitHub Pages IPv6 1 |
-| **AAAA**| `@` (apex) | `2606:50c0:8001::153` | Proxied (Orange Cloud) | GitHub Pages IPv6 2 |
-| **AAAA**| `@` (apex) | `2606:50c0:8002::153` | Proxied (Orange Cloud) | GitHub Pages IPv6 3 |
-| **AAAA**| `@` (apex) | `2606:50c0:8003::153` | Proxied (Orange Cloud) | GitHub Pages IPv6 4 |
-| **CNAME**| `www` | `spectredefend.com` | Proxied (Orange Cloud) | Canonical WWW alias |
+### Configuration Placeholders
+The following placeholders must be configured with your actual environment parameters:
 
-### B. Cloudflare Worker OAuth Subdomain
-
-Attach the Cloudflare Worker to a dedicated authentication subdomain:
-
-| Type | Name | Content / Target | Proxy Status | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| **Custom Domain** | `auth` | `spectre-defend-oauth-worker` | Proxied (Cloudflare) | Worker Custom Domain (`auth.spectredefend.com`) |
-
-*(Alternative: Use the default Cloudflare Workers subdomain `https://spectre-defend-oauth-worker.<subdomain>.workers.dev`)*.
-
----
-
-## 3. SSL/TLS Encryption Settings
-
-In **SSL/TLS** > **Overview**:
-- **Encryption Mode**: Select **Full (Strict)**.
-- **Always Use HTTPS**: **Enabled** (**SSL/TLS** > **Edge Certificates**).
-- **Minimum TLS Version**: **TLS 1.2** (TLS 1.3 enabled).
-- **HSTS (HTTP Strict Transport Security)**:
-  - Max-Age: `31536000` (1 year).
-  - Include Subdomains: `Enabled`.
-  - Preload: `Enabled`.
+- `CUSTOM_DOMAIN=SpectreDefend.dpdns.org`
+- `GITHUB_PAGES_TARGET=REQUIRES_CONFIGURATION` (e.g., `<your-username>.github.io` or GitHub Pages IP cluster)
+- `WORKER_DOMAIN=REQUIRES_CONFIGURATION` (e.g., `spectre-defend-oauth-worker.<account-subdomain>.workers.dev` or a dedicated custom subdomain)
 
 ---
 
-## 4. Cloudflare Worker Secret Management
+## 2. DNS Configuration (Cloudflare DNS)
 
-Cloudflare Worker secrets are encrypted at rest and never exposed to the browser or stored in Git:
+Log in to the Cloudflare Dashboard for your domain zone and configure the DNS records:
 
+### A. Production Domain Record
+
+| Record Type | Name / Host | Target / Content | Proxy Status | Description |
+|---|---|---|---|---|
+| **CNAME** | `SpectreDefend` (or `@` if domain apex) | `GITHUB_PAGES_TARGET` | **DNS-only** (Initially for cert verification) or **Proxied** | Points `SpectreDefend.dpdns.org` to GitHub Pages |
+
+> **IMPORTANT: Proxy Status (DNS-Only vs Proxied)**:
+> 1. **Initial Verification Phase**: When first configuring GitHub Pages and issuing the initial GitHub Pages Let's Encrypt TLS certificate, set the Proxy Status to **DNS-only (Grey Cloud)**. This allows GitHub's certificate challenge to communicate directly with GitHub's servers without proxy interference.
+> 2. **Production Phase**: Once the domain is verified and the certificate is active in GitHub Pages settings, you may switch Proxy Status to **Proxied (Orange Cloud)** to benefit from Cloudflare's DDoS protection, Web Application Firewall (WAF), and Anycast edge acceleration.
+
+---
+
+## 3. SSL/TLS Encryption Configuration
+
+Navigate to **SSL/TLS** in the Cloudflare Dashboard:
+
+1. **Encryption Mode**:
+   - Set to **Full** or **Full (Strict)**.
+   - *Why*: **Full (Strict)** validates the certificate on GitHub Pages origin servers. Because GitHub Pages provisions a valid TLS certificate for `SpectreDefend.dpdns.org`, Full (Strict) provides complete end-to-end cryptographic protection.
+   - *Warning*: Never use "Flexible", as it causes infinite HTTP-to-HTTPS redirect loops with GitHub Pages.
+2. **Edge Certificates**:
+   - **Always Use HTTPS**: **Enabled**.
+   - **Minimum TLS Version**: **TLS 1.2** (with TLS 1.3 enabled).
+   - **Opportunistic Encryption**: **Enabled**.
+
+---
+
+## 4. Cloudflare Worker Configuration
+
+The OAuth authentication service runs as an isolated serverless Worker that securely mediates between Decap CMS and GitHub.
+
+### A. Deployment via Wrangler CLI
+Navigate to the worker directory:
 ```bash
 cd worker
+npm install
+```
 
-# 1. Set GitHub OAuth Client ID
+Verify `wrangler.jsonc`:
+```jsonc
+{
+  "name": "spectre-defend-oauth-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2024-09-21",
+  "vars": {
+    "ALLOWED_ORIGIN": "https://SpectreDefend.dpdns.org",
+    "CMS_ORIGIN": "https://SpectreDefend.dpdns.org"
+  }
+}
+```
+
+### B. Worker Custom Domain / Hostname
+You have two options for the Worker endpoint:
+1. **Cloudflare Workers Subdomain**:
+   - Format: `https://spectre-defend-oauth-worker.<account-subdomain>.workers.dev`
+   - Set this URL as your `WORKER_DOMAIN`.
+2. **Dedicated Custom Subdomain**:
+   - Attach a custom domain in Cloudflare Dashboard: **Workers & Pages** > **spectre-defend-oauth-worker** > **Settings** > **Domains & Routes** > **Add Custom Domain** (e.g., `auth.dpdns.org` or similar).
+
+### C. Worker Secrets Management
+Never hardcode secrets. Inject them via Wrangler CLI:
+```bash
 npx wrangler secret put GITHUB_CLIENT_ID
-# Enter your Client ID
+# Prompt: Enter your GitHub OAuth Client ID
 
-# 2. Set GitHub OAuth Client Secret
 npx wrangler secret put GITHUB_CLIENT_SECRET
-# Enter your Client Secret
-
-# 3. Optional Notification Webhook URL
-npx wrangler secret put NOTIFICATION_WEBHOOK_URL
-# Enter your Webhook URL
+# Prompt: Enter your GitHub OAuth Client Secret
 ```
 
 ---
 
-## 5. Caching Rules & Page Rules
+## 5. Cache Considerations for Decap CMS
 
-### Admin & Auth Exclusion Rule
-Create a Cache Rule to prevent caching CMS or OAuth authentication responses:
-- **Rule Name**: `Bypass CMS & Auth Caching`
-- **Matching Expression**:
-  `http.request.uri.path starts_with "/admin" or http.request.uri.path starts_with "/auth" or http.request.uri.path starts_with "/callback"`
-- **Cache Eligibility**: **Bypass Cache**
+Because Decap CMS is a dynamic administrative client loaded via static HTML (`/admin/`), aggressive edge caching can cause administrative sessions to see stale configuration or auth failures.
 
-### Static Asset Edge Rule
-- **Rule Name**: `Cache Static Production Assets`
-- **Matching Expression**:
-  `http.request.uri.path starts_with "/assets" or http.request.uri.path contains ".svg" or http.request.uri.path contains ".jpg"`
-- **Edge Cache TTL**: `30 days`
-- **Browser Cache TTL**: `7 days`
+### Recommended Cloudflare Cache Rules (Page Rules or Cache Rules):
+Create a Cache Rule in Cloudflare Dashboard under **Caching** > **Cache Rules**:
+
+- **Rule 1: Decap CMS Admin Bypass**:
+  - **Condition**: URI Path starts with `/admin/`
+  - **Settings**:
+    - Cache Eligibility: **Bypass cache**
+  - *Reason*: Ensures that updates to `/admin/config.yml` and authentication flows are immediately fetched fresh from the origin without edge latency.
+
+- **Rule 2: OAuth Worker Endpoints (if using zone routes)**:
+  - **Condition**: URI Path matches `/auth*` or `/callback*`
+  - **Settings**:
+    - Cache Eligibility: **Bypass cache**
+  - *Reason*: OAuth handshakes and state cookies must never be cached.
+
+- **Rule 3: Static Asset Caching**:
+  - **Condition**: URI Path starts with `/assets/` or extension in `(js, css, png, jpg, svg, webp, woff2)`
+  - **Settings**:
+    - Edge Cache TTL: **30 days**
+    - Browser Cache TTL: **4 hours**
