@@ -19,7 +19,7 @@ As a premier cybersecurity organization, **SPECTRE DEFEND** applies defense-in-d
 | **Open Redirects** | Phishing via trusted domain | Hardcoded redirect whitelist restricted to `https://github.com/login/oauth/authorize` and internal callback. |
 | **DDoS Attacks** | Site downtime | Cloudflare Anycast edge absorbs volumetric layer 3/4/7 DDoS traffic. |
 | **Malicious Media Uploads** | Hostile executable storage | Decap CMS restricted to static image formats (`.svg`, `.jpg`, `.png`, `.webp`) in `public/images/uploads`. |
-| **Clickjacking** | Coerced admin actions | `X-Frame-Options: DENY` and CSP `frame-ancestors 'self' https://spectredefend.com`. |
+| **Clickjacking** | Coerced admin actions | `X-Frame-Options: DENY` and CSP `frame-ancestors 'self' https://SpectreDefend.dpdns.org`. |
 
 ---
 

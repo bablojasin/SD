@@ -22,7 +22,7 @@ This document contains solutions for common operational, deployment, and authent
 - **Cause**: The OAuth state cookie was dropped or blocked by browser third-party cookie restrictions, or the session timed out.
 - **Resolution**:
   1. The Cloudflare Worker sets `SameSite=Lax; Secure`. Ensure HTTPS is enabled.
-  2. Disable browser extensions that aggressively block popup session cookies for `spectredefend.com`.
+  2. Disable browser extensions that aggressively block popup session cookies for `SpectreDefend.dpdns.org`.
 
 ---
 

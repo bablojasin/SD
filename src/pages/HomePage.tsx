@@ -29,9 +29,9 @@ export const HomePage: React.FC<HomePageProps> = ({
   return (
     <>
       <SEO
-        title="Securify | Cybersecurity Solutions & Digital Security"
+        title="SPECTRE DEFEND | Cybersecurity Solutions & Digital Security"
         description={seo.defaultDescription}
-        canonicalUrl="https://securify.com/"
+        canonicalUrl="https://SpectreDefend.dpdns.org/"
         faqs={homeContent.faqs}
       />
 
@@ -60,7 +60,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         }}
       />
 
-      {/* About Securify Preview */}
+      {/* About SPECTRE DEFEND Preview */}
       <AboutSection
         onLearnMore={() => {
           const el = document.getElementById('services');
@@ -94,7 +94,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <FAQSection
           label="Operational Clarifications"
           heading="Frequently Asked Questions"
-          description="Everything enterprise security leads need to know about Securify's autonomous defense infrastructure."
+          description="Everything enterprise security leads need to know about SPECTRE DEFEND's autonomous defense infrastructure."
           faqs={homeContent.faqs}
         />
       )}

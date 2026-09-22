@@ -7,7 +7,7 @@
 ---
 
 ## Summary
-These Terms of Service govern your access to and use of [spectredefend.com](https://spectredefend.com) and any informational diagnostics provided on the website. By accessing or using our website, you agree to these Terms.
+These Terms of Service govern your access to and use of [SpectreDefend.dpdns.org](https://SpectreDefend.dpdns.org) and any informational diagnostics provided on the website. By accessing or using our website, you agree to these Terms.
 
 ---
 
@@ -19,12 +19,12 @@ These Terms of Service ("Terms") constitute a legally binding agreement between 
 * **Registered Address:** `[REQUIRES BUSINESS CONFIRMATION]`
 * **Inquiries & Legal Notices:** legal@spectredefend.com
 
-By accessing or using spectredefend.com, you confirm that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you must not access or use the website.
+By accessing or using SpectreDefend.dpdns.org, you confirm that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you must not access or use the website.
 
 ---
 
 ## 2. Permitted Use of Website
-You are granted a limited, non-exclusive, revocable, and non-transferable license to access and view content on spectredefend.com solely for your internal evaluation of our cybersecurity services.
+You are granted a limited, non-exclusive, revocable, and non-transferable license to access and view content on SpectreDefend.dpdns.org solely for your internal evaluation of our cybersecurity services.
 
 You agree not to:
 * Use the website in violation of any applicable local, national, or international law.

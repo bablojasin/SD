@@ -123,16 +123,16 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ onCtaSuccess }) => {
         title={post.seoTitle || post.title}
         description={post.seoDescription || post.excerpt}
         ogImage={post.featuredImage || post.imageUrl}
-        canonicalUrl={`https://securify.com/blog/${post.slug}`}
+        canonicalUrl={`https://SpectreDefend.dpdns.org/blog/${post.slug}`}
         article={{
           publishedTime: post.publishDate || post.date || '2026-09-16',
           author: post.author,
           tags: post.tags,
         }}
         breadcrumbs={[
-          { name: 'Home', url: 'https://securify.com/' },
-          { name: 'Insights', url: 'https://securify.com/blog' },
-          { name: post.title, url: `https://securify.com/blog/${post.slug}` },
+          { name: 'Home', url: 'https://SpectreDefend.dpdns.org/' },
+          { name: 'Insights', url: 'https://SpectreDefend.dpdns.org/blog' },
+          { name: post.title, url: `https://SpectreDefend.dpdns.org/blog/${post.slug}` },
         ]}
       />
 

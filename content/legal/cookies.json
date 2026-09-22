@@ -3,7 +3,7 @@
   "slug": "cookie-policy",
   "lastUpdated": "September 21, 2026",
   "effectiveDate": "September 21, 2026",
-  "summary": "This Cookie Policy explains how SPECTRE DEFEND utilizes cookies and client-side storage technologies on spectredefend.com. We do not use third-party tracking or advertising cookies.",
+  "summary": "This Cookie Policy explains how SPECTRE DEFEND utilizes cookies and client-side storage technologies on SpectreDefend.dpdns.org. We do not use third-party tracking or advertising cookies.",
   "sections": [
     {
       "heading": "1. What Are Cookies and Storage Technologies?",
@@ -15,7 +15,7 @@
     },
     {
       "heading": "3. Complete Inventory of Cookies and Storage Keys",
-      "content": "The following is the exhaustive inventory of storage technologies used across our domain:\n\n1. cookie_consent_preferences\n• Category: Strictly Necessary / Preference\n• Type: Browser localStorage\n• Purpose: Stores your cookie preference selection so that you are not repeatedly prompted on subsequent page visits.\n• Duration: Persistent until browser storage is cleared.\n\n2. oauth_state\n• Category: Strictly Necessary / Security\n• Type: HTTP-only, Secure Cookie (SameSite=Lax)\n• Host: auth.spectredefend.com (Cloudflare Worker)\n• Purpose: Cryptographic CSRF state token used during GitHub OAuth authentication for authorized content editors accessing the Decap CMS portal (/admin/).\n• Duration: 10 minutes.\n\n3. decap-cms-user\n• Category: Strictly Necessary / Operational\n• Type: Browser localStorage\n• Host: spectredefend.com/admin/\n• Purpose: Stores encrypted session credentials for authenticated content editors editing site markdown files via GitHub API.\n• Duration: Persistent until explicit logout."
+      "content": "The following is the exhaustive inventory of storage technologies used across our domain:\n\n1. cookie_consent_preferences\n• Category: Strictly Necessary / Preference\n• Type: Browser localStorage\n• Purpose: Stores your cookie preference selection so that you are not repeatedly prompted on subsequent page visits.\n• Duration: Persistent until browser storage is cleared.\n\n2. oauth_state\n• Category: Strictly Necessary / Security\n• Type: HTTP-only, Secure Cookie (SameSite=Lax)\n• Host: auth.spectredefend.com (Cloudflare Worker)\n• Purpose: Cryptographic CSRF state token used during GitHub OAuth authentication for authorized content editors accessing the Decap CMS portal (/admin/).\n• Duration: 10 minutes.\n\n3. decap-cms-user\n• Category: Strictly Necessary / Operational\n• Type: Browser localStorage\n• Host: SpectreDefend.dpdns.org/admin/\n• Purpose: Stores encrypted session credentials for authenticated content editors editing site markdown files via GitHub API.\n• Duration: Persistent until explicit logout."
     },
     {
       "heading": "4. Managing and Disabling Cookies",

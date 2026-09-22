@@ -40,7 +40,7 @@
                                                  ▼
                                   ┌─────────────────────────────┐
                                   │   CUSTOM DOMAIN / DNS       │
-                                  │    (spectredefend.com)      │
+                                  │  (SpectreDefend.dpdns.org)  │
                                   └──────────────┬──────────────┘
                                                  │
                                                  ▼

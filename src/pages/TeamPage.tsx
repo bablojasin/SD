@@ -31,11 +31,11 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onCtaSuccess }) => {
     <div className="py-12 md:py-20 bg-[#050807]">
       <SEO
         title="Leadership Team & Cyber Defense Fellows"
-        description="Meet the founders, cryptography researchers, red-team veterans, and security architects leading Securify."
-        canonicalUrl="https://securify.com/team"
+        description="Meet the founders, cryptography researchers, red-team veterans, and security architects leading SPECTRE DEFEND."
+        canonicalUrl="https://SpectreDefend.dpdns.org/team"
         breadcrumbs={[
-          { name: 'Home', url: 'https://securify.com/' },
-          { name: 'Team', url: 'https://securify.com/team' },
+          { name: 'Home', url: 'https://SpectreDefend.dpdns.org/' },
+          { name: 'Team', url: 'https://SpectreDefend.dpdns.org/team' },
         ]}
       />
 
@@ -68,7 +68,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onCtaSuccess }) => {
                 <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 bg-black">
                   <img
                     src={member.profileImage}
-                    alt={`${member.name}, ${member.position} at Securify`}
+                    alt={`${member.name}, ${member.position} at SPECTRE DEFEND`}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500"
                   />
@@ -166,7 +166,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onCtaSuccess }) => {
               <div className="flex items-center gap-4 mb-6">
                 <img
                   src={selectedMember.profileImage}
-                  alt={`${selectedMember.name}, ${selectedMember.position} at Securify`}
+                  alt={`${selectedMember.name}, ${selectedMember.position} at SPECTRE DEFEND`}
                   className="w-16 h-16 rounded-2xl object-cover border border-white/10"
                 />
                 <div>

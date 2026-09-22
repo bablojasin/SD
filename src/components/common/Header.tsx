@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenScanner }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
           
-          {/* LEFT: Securify Logo */}
+          {/* LEFT: SPECTRE DEFEND Logo */}
           <div className="flex items-center shrink-0">
             <Logo size="md" />
           </div>

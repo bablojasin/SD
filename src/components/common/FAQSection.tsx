@@ -19,7 +19,7 @@ interface FAQSectionProps {
 export const FAQSection: React.FC<FAQSectionProps> = ({
   label = 'Frequently Asked Questions',
   heading = 'Answers for Security Architects & CISOs',
-  description = 'Detailed operational specifications regarding Securify autonomous threat containment, compliance, and deployment.',
+  description = 'Detailed operational specifications regarding SPECTRE DEFEND autonomous threat containment, compliance, and deployment.',
   faqs,
   className = '',
 }) => {

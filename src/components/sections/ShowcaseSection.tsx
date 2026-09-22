@@ -41,7 +41,7 @@ export const ShowcaseSection: React.FC<ShowcaseSectionProps> = ({ onExploreCaseS
           <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/10] w-full overflow-hidden bg-[#050807]">
             <img
               src={SOC_ROOM_IMAGE}
-              alt="Securify Security Operations Center and Live Threat Monitoring"
+              alt="SPECTRE DEFEND Security Operations Center and Live Threat Monitoring"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000 ease-out brightness-90 contrast-105"
             />

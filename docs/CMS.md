@@ -4,7 +4,7 @@
 
 The Decap CMS portal is located at:
 ```text
-https://spectredefend.com/admin/
+https://SpectreDefend.dpdns.org/admin/
 ```
 
 - **Authentication Method**: GitHub OAuth.
@@ -16,7 +16,7 @@ https://spectredefend.com/admin/
 
 ## 2. Authentication Workflow
 
-1. The author opens `https://spectredefend.com/admin/`.
+1. The author opens `https://SpectreDefend.dpdns.org/admin/`.
 2. The user clicks **Login with GitHub**.
 3. A browser popup opens, directing to the Cloudflare Worker `/auth` endpoint.
 4. The Worker validates state and redirects the author to GitHub's authorization consent screen.

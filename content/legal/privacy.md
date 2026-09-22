@@ -35,7 +35,7 @@ We practice strict data minimization. We only collect personal information that 
 ---
 
 ## 3. Automated Technical Telemetry & Server Logs
-When you browse spectredefend.com, our edge network and hosting infrastructure (Cloudflare and GitHub Pages) automatically record standard technical server logs required for network reliability and defense against distributed denial-of-service (DDoS) attacks. These logs may include:
+When you browse SpectreDefend.dpdns.org, our edge network and hosting infrastructure (Cloudflare and GitHub Pages) automatically record standard technical server logs required for network reliability and defense against distributed denial-of-service (DDoS) attacks. These logs may include:
 
 * Your IP address
 * Browser type and version
@@ -51,7 +51,7 @@ These technical logs are processed on the basis of legitimate interest (maintain
 SPECTRE DEFEND does not deploy third-party advertising, remarketing, or tracking cookies.
 
 * **Public Visitors:** The public website does not set non-essential advertising or behavioral tracking cookies. Your cookie preference selection is retained locally in your browser (`cookie_consent_preferences`).
-* **Content Management (`/admin/`):** When an authorized content editor initiates GitHub OAuth authentication via our serverless proxy (`auth.spectredefend.com`), a strictly necessary HTTP-only session cookie (`oauth_state`) is used with a 10-minute lifetime to prevent Cross-Site Request Forgery (CSRF). Session tokens are stored in the editor's browser `localStorage` to maintain the editing session.
+* **Content Management (`/admin/`):** When an authorized content editor initiates GitHub OAuth authentication via our serverless proxy, a strictly necessary HTTP-only session cookie (`oauth_state`) is used with a 10-minute lifetime to prevent Cross-Site Request Forgery (CSRF). Session tokens are stored in the editor's browser `localStorage` to maintain the editing session.
 
 ---
 
@@ -78,7 +78,7 @@ All service providers are bound by confidentiality obligations and data processi
 ## 7. Data Retention & Cryptographic Security
 Inquiry data submitted through web forms is retained only as long as necessary to fulfill the operational purpose of the communication or to comply with statutory commercial retention obligations.
 
-All web communications with spectredefend.com are encrypted in transit using Transport Layer Security (TLS 1.2 and TLS 1.3) with modern cipher suites and HTTP Strict Transport Security (HSTS).
+All web communications with SpectreDefend.dpdns.org are encrypted in transit using Transport Layer Security (TLS 1.2 and TLS 1.3) with modern cipher suites and HTTP Strict Transport Security (HSTS).
 
 ---
 

@@ -49,12 +49,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, onC
   return (
     <div className="py-12 md:py-20 bg-[#050807]">
       <SEO
-        title="Cybersecurity Services | Securify"
+        title="Cybersecurity Services | SPECTRE DEFEND"
         description="Explore our specialized suite of enterprise cyber defense services: continuous threat detection, cloud infrastructure security, vulnerability auditing, and penetration testing."
-        canonicalUrl="https://securify.com/services"
+        canonicalUrl="https://SpectreDefend.dpdns.org/services"
         breadcrumbs={[
-          { name: 'Home', url: 'https://securify.com/' },
-          { name: 'Services', url: 'https://securify.com/services' },
+          { name: 'Home', url: 'https://SpectreDefend.dpdns.org/' },
+          { name: 'Services', url: 'https://SpectreDefend.dpdns.org/services' },
         ]}
         faqs={servicesPage.faqs}
       />
@@ -127,7 +127,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, onC
               Zero-Trust Performance Guarantees
             </h3>
             <p className="text-sm text-[#9AA39A] mt-2">
-              Every Securify customer is protected by verifiable contractual SLAs backed by cryptographic telemetry records.
+              Every SPECTRE DEFEND customer is protected by verifiable contractual SLAs backed by cryptographic telemetry records.
             </p>
           </div>
 
@@ -160,7 +160,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, onC
           <FAQSection
             label="Service Architecture"
             heading="Frequently Asked Questions"
-            description="Clear answers regarding deployment scopes, integrations, and compliance coverage for Securify defense modules."
+            description="Clear answers regarding deployment scopes, integrations, and compliance coverage for SPECTRE DEFEND defense modules."
             faqs={servicesPage.faqs}
           />
         )}
@@ -168,7 +168,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, onC
         {/* CTA */}
         <CTASection
           title="Ready To Elevate Your Security Posture?"
-          subtitle="Deploy Securify autonomous protection or talk to our cybersecurity architects today."
+          subtitle="Deploy SPECTRE DEFEND autonomous protection or talk to our cybersecurity architects today."
           onSuccessPrompt={onCtaSuccess}
         />
 

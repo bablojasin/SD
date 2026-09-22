@@ -37,12 +37,12 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onCtaSuccess }) => {
   return (
     <div className="py-12 md:py-20 bg-[#050807]">
       <SEO
-        title="Cybersecurity Insights | Securify"
-        description="In-depth threat analyses, CVE breakdowns, zero-day advisories, and architectural whitepapers authored by the Securify Threat Research Lab."
-        canonicalUrl="https://securify.com/blog"
+        title="Cybersecurity Insights | SPECTRE DEFEND"
+        description="In-depth threat analyses, CVE breakdowns, zero-day advisories, and architectural whitepapers authored by the SPECTRE DEFEND Threat Research Lab."
+        canonicalUrl="https://SpectreDefend.dpdns.org/blog"
         breadcrumbs={[
-          { name: 'Home', url: 'https://securify.com/' },
-          { name: 'Insights', url: 'https://securify.com/blog' },
+          { name: 'Home', url: 'https://SpectreDefend.dpdns.org/' },
+          { name: 'Insights', url: 'https://SpectreDefend.dpdns.org/blog' },
         ]}
       />
 
@@ -58,7 +58,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onCtaSuccess }) => {
             <span className="text-[#B7FF00]">Insights & Intelligence</span>
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#9AA39A] leading-relaxed">
-            In-depth threat analyses, CVE breakdowns, zero-day advisories, and architectural whitepapers authored by the Securify Threat Research Lab.
+            In-depth threat analyses, CVE breakdowns, zero-day advisories, and architectural whitepapers authored by the SPECTRE DEFEND Threat Research Lab.
           </p>
         </div>
 

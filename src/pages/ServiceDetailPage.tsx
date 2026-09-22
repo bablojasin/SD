@@ -39,7 +39,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onCtaSucce
     .filter((s) => s.slug !== service.slug && (!service.relatedServices || service.relatedServices.includes(s.slug)))
     .slice(0, 3);
 
-  const baseUrl = siteSettings.siteUrl || 'https://securify.com';
+  const baseUrl = siteSettings.siteUrl || 'https://SpectreDefend.dpdns.org';
 
   return (
     <div className="py-12 md:py-20 bg-[#050807]">
@@ -287,7 +287,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onCtaSucce
                 Deployment Consultation
               </h3>
               <p className="text-xs text-[#9AA39A] leading-relaxed">
-                Speak directly with a Securify lead security architect to perform an attack surface scan and configure telemetry.
+                Speak directly with a SPECTRE DEFEND lead security architect to perform an attack surface scan and configure telemetry.
               </p>
               <div className="p-3.5 rounded-2xl bg-[#172512] border border-[#B7FF00]/30 text-xs font-mono text-[#B7FF00] space-y-1">
                 <div className="font-bold">24/7 Red Team Dispatch:</div>
@@ -344,7 +344,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onCtaSucce
         {/* CTA */}
         <CTASection
           title="Ready To Lock Down This Threat Vector?"
-          subtitle="Deploy Securify autonomous protection or talk to our cybersecurity architects today."
+          subtitle="Deploy SPECTRE DEFEND autonomous protection or talk to our cybersecurity architects today."
           onSuccessPrompt={onCtaSuccess}
         />
 

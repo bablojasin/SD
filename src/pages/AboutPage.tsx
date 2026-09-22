@@ -22,12 +22,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
   return (
     <div className="py-12 md:py-20 bg-[#050807]">
       <SEO
-        title="About Securify | Cybersecurity Team & Expertise"
+        title="About SPECTRE DEFEND | Cybersecurity Team & Expertise"
         description={about.description}
-        canonicalUrl="https://securify.com/about"
+        canonicalUrl="https://SpectreDefend.dpdns.org/about"
         breadcrumbs={[
-          { name: 'Home', url: 'https://securify.com/' },
-          { name: 'About', url: 'https://securify.com/about' },
+          { name: 'Home', url: 'https://SpectreDefend.dpdns.org/' },
+          { name: 'About', url: 'https://SpectreDefend.dpdns.org/about' },
         ]}
         faqs={about.faqs}
       />
@@ -37,7 +37,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <SectionLabel className="mb-4">
-            {about.sectionLabel || 'About Securify'}
+            {about.sectionLabel || 'About SPECTRE DEFEND'}
           </SectionLabel>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#FFFFFF] tracking-tight leading-tight">
             {about.heading} <br />
@@ -54,7 +54,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
             <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border border-white/10 bg-[#050807] p-3 shadow-2xl">
               <img
                 src={heroImage}
-                alt="Securify 3D Global Cyber Shield"
+                alt="SPECTRE DEFEND 3D Global Cyber Shield"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -114,7 +114,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <img
                   src={SOC_ROOM_IMAGE}
-                  alt="Securify Cyber Defense Security Operations Center"
+                  alt="SPECTRE DEFEND Cyber Defense Security Operations Center"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />
@@ -152,7 +152,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
                 <div className="aspect-square rounded-2xl overflow-hidden mb-6 bg-black">
                   <img
                     src={member.profileImage}
-                    alt={`${member.name}, ${member.position} at Securify`}
+                    alt={`${member.name}, ${member.position} at SPECTRE DEFEND`}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -176,7 +176,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onCtaSuccess }) => {
           <FAQSection
             label="Security Doctrine"
             heading="Frequently Asked Questions"
-            description="Operational fundamentals regarding Securify's research philosophy, compliance, and zero-trust doctrine."
+            description="Operational fundamentals regarding SPECTRE DEFEND's research philosophy, compliance, and zero-trust doctrine."
             faqs={about.faqs}
           />
         )}

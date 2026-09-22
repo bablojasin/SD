@@ -22,17 +22,17 @@ Every page renders compliant Open Graph and Twitter Card tags:
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://spectredefend.com/" />
+<meta property="og:url" content="https://SpectreDefend.dpdns.org/" />
 <meta property="og:title" content="SPECTRE DEFEND — Autonomous Cyber Defense & Zero-Trust Intelligence" />
 <meta property="og:description" content="SPECTRE DEFEND safeguards enterprise infrastructure, clouds, networks, and digital assets against modern cyber threats with autonomous intelligence." />
-<meta property="og:image" content="https://spectredefend.com/images/og-spectre-defend.jpg" />
+<meta property="og:image" content="https://SpectreDefend.dpdns.org/images/og-spectre-defend.jpg" />
 
 <!-- Twitter Card -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://spectredefend.com/" />
+<meta property="twitter:url" content="https://SpectreDefend.dpdns.org/" />
 <meta property="twitter:title" content="SPECTRE DEFEND — Autonomous Cyber Defense & Zero-Trust Intelligence" />
 <meta property="twitter:description" content="SPECTRE DEFEND safeguards enterprise infrastructure, clouds, networks, and digital assets against modern cyber threats with autonomous intelligence." />
-<meta property="twitter:image" content="https://spectredefend.com/images/og-spectre-defend.jpg" />
+<meta property="twitter:image" content="https://SpectreDefend.dpdns.org/images/og-spectre-defend.jpg" />
 ```
 
 ---
@@ -47,8 +47,8 @@ The root application provides verified Schema.org structured data declaring the 
   "@type": "Organization",
   "name": "SPECTRE DEFEND",
   "legalName": "SPECTRE DEFEND Inc.",
-  "url": "https://spectredefend.com",
-  "logo": "https://spectredefend.com/assets/brand/spectre-defend-logo.svg",
+  "url": "https://SpectreDefend.dpdns.org",
+  "logo": "https://SpectreDefend.dpdns.org/assets/brand/spectre-defend-logo.svg",
   "description": "Autonomous enterprise cybersecurity, active zero-trust network protection, and 24/7 sovereign SOC surveillance.",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -74,7 +74,7 @@ Located at `public/robots.txt`:
 - **Allowed Pages**: All public service, blog, team, about, and contact pages.
 - **Disallowed Pages**: CMS administration (`/admin/`) and authentication endpoints (`/auth/`, `/callback/`).
 - **AI Search Crawlers**: Explicitly granted indexing permissions for **GPTBot**, **ClaudeBot**, **Google-Extended**, and **PerplexityBot** to ensure presence in conversational search summaries.
-- **Sitemap Directive**: Declares `Sitemap: https://spectredefend.com/sitemap.xml`.
+- **Sitemap Directive**: Declares `Sitemap: https://SpectreDefend.dpdns.org/sitemap.xml`.
 
 ---
 
