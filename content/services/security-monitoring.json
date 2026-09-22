@@ -3,7 +3,7 @@
   "slug": "security-monitoring",
   "shortDescription": "Continuously monitor your digital environment for emerging threats and anomalies.",
   "fullDescription": "Round-the-clock Security Operations Center (SOC) vigilantly supervising hybrid environments worldwide. Combining high-velocity behavioral machine learning with seasoned human tier-3 threat analysts, SPECTRE DEFEND ensures 24/7/365 vigilance with rapid containment playbooks.",
-  "featuredImage": "/src/assets/images/soc_war_room_1789575925158.jpg",
+  "featuredImage": "/assets/images/soc_war_room_1789575925158.jpg",
   "icon": "Laptop",
   "category": "Operations",
   "order": 6,

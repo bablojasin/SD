@@ -6,7 +6,7 @@
     "description": "Advanced cybersecurity solutions to detect, prevent and stop digital threats before they become breaches.",
     "primaryButtonText": "Start Defending Today",
     "primaryButtonLink": "/contact",
-    "image": "/src/assets/images/hero_cyber_defense_shield_1789577844799.jpg",
+    "image": "/assets/images/hero_cyber_defense_shield_1789577844799.jpg",
     "imageAlt": "SPECTRE DEFEND 3D Cyber-Defense Shield with Heavy Metallic Padlock, Graphite Carbon Fiber and Neon Rim Lighting",
     "statsNumber": "20K+",
     "statsLabel": "Protected Assets",
@@ -36,7 +36,7 @@
     "description": "Traditional firewalls wait for breaches to occur. SPECTRE DEFEND deploys autonomous behavioral heuristics that intercept, microsegment, and quarantine adversarial campaigns before perimeter compromise.",
     "ctaLabel": "Explore Security Architecture",
     "ctaLink": "/about",
-    "globeImage": "/src/assets/images/about_3d_globe_1789575901855.jpg"
+    "globeImage": "/assets/images/about_3d_globe_1789575901855.jpg"
   },
   "servicesSection": {
     "sectionLabel": "Our Cyber Services",
@@ -64,7 +64,7 @@
     "description": "Engage SPECTRE DEFEND's autonomous defense engineers for a confidential perimeter risk assessment and threat model review.",
     "buttonText": "Engage Security Team",
     "buttonLink": "/contact",
-    "image": "/src/assets/images/cta_cube_1789575924765.jpg"
+    "image": "/assets/images/cta_3d_mail_shield_1789575913648.jpg"
   },
   "faqs": [
     {

@@ -48,7 +48,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               title: serviceId.replace(/-/g, ' ').toUpperCase(),
               shortDescription: 'Advanced zero-trust protection for enterprise operations.',
               fullDescription: 'Comprehensive autonomous telemetry and threat neutralization.',
-              featuredImage: '/src/assets/images/services_threat_detection_1789575924765.jpg',
+              featuredImage: '/assets/images/services_threat_detection_1789575924765.jpg',
               category: 'SecOps',
               order: 1,
               isFeatured: true,

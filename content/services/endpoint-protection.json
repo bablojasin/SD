@@ -3,7 +3,7 @@
   "slug": "endpoint-protection",
   "shortDescription": "Autonomous protection and anti-tamper shielding for all laptops, servers and edge nodes.",
   "fullDescription": "Next-generation endpoint detection and response (EDR/XDR) engineered for distributed enterprise workforces. Lightweight kernel telemetry operates silently without CPU degradation while blocking fileless scripts, memory exploits, and credential theft attempts.",
-  "featuredImage": "/src/assets/images/cyber_analyst_desk_1789575942605.jpg",
+  "featuredImage": "/assets/images/cyber_analyst_desk_1789575942605.jpg",
   "icon": "ShieldCheck",
   "category": "Endpoint",
   "order": 7,

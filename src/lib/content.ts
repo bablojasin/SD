@@ -111,7 +111,7 @@ const defaultSEO: SEOConfig = {
   defaultDescription:
     'Protect enterprise infrastructure with SPECTRE DEFEND autonomous zero-trust cyber defense, high-speed telemetry, continuous threat detection, and 24/7 sovereign SOC operations.',
   siteUrl: 'https://SpectreDefend.dpdns.org',
-  defaultOgImage: '/src/assets/images/hero_cyber_defense_shield_1789577844799.jpg',
+  defaultOgImage: '/assets/images/hero_cyber_defense_shield_1789577844799.jpg',
   twitterHandle: '@spectredefend',
   organizationName: 'SPECTRE DEFEND',
   organizationLogo: 'https://SpectreDefend.dpdns.org/logo.svg',
@@ -193,7 +193,7 @@ export function getHomePageContent(): HomePageContent {
         'Protect your systems, data and digital infrastructure with advanced threat detection, real-time monitoring and proactive defense solutions.',
       primaryButtonText: 'Start Protecting Today',
       primaryButtonLink: '/contact',
-      image: '/src/assets/images/hero_3d_shield_1789575889590.jpg',
+      image: '/assets/images/hero_3d_shield_1789575889590.jpg',
       imageAlt: 'SPECTRE DEFEND Autonomous Cyber Defense Shield',
       statsNumber: '99.9%',
       statsLabel: 'Threat Detection Rate',
@@ -212,7 +212,7 @@ export function getHomePageContent(): HomePageContent {
         'We decouple cybersecurity from human response latency. Our zero-trust fabric continuously interrogates host baselines and arrests unauthorized movement in sub-second timeframes.',
       ctaLabel: 'Read Defense Architecture',
       ctaLink: '/about',
-      globeImage: '/src/assets/images/about_3d_globe_1789575901855.jpg',
+      globeImage: '/assets/images/about_3d_globe_1789575901855.jpg',
     },
     servicesSection: {
       sectionLabel: 'Our Cyber Defense',
@@ -243,7 +243,7 @@ export function getHomePageContent(): HomePageContent {
       description: "Your digital environment doesn't have to face modern threats alone.",
       buttonText: 'Start Defending Today',
       buttonLink: '/contact',
-      image: '/src/assets/images/cta_3d_mail_shield_1789575913648.jpg',
+      image: '/assets/images/cta_3d_mail_shield_1789575913648.jpg',
     },
   };
 }
@@ -258,7 +258,7 @@ export function getAboutPageContent(): AboutPageContent {
     highlightText: 'Digital Sovereignty',
     description:
       'SPECTRE DEFEND protects enterprises, sovereign cloud estates, infrastructure, applications, networks, and digital assets against modern cyber threats with autonomous intelligence.',
-    heroImage: '/src/assets/images/about_3d_globe_1789575901855.jpg',
+    heroImage: '/assets/images/about_3d_globe_1789575901855.jpg',
     doctrineHeading: 'Our Security Doctrine: Zero Trust, Zero Compromise',
     story:
       "At SPECTRE DEFEND, we believe cybersecurity is more than just technology—it's institutional trust. Traditional perimeter security assumes anything behind the firewall is safe. In today's hostile digital landscape, nation-state adversaries, polymorphic ransomware, and AI-driven bots easily bypass static walls.",

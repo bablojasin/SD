@@ -3,7 +3,7 @@
   "slug": "cloud-security",
   "shortDescription": "Secure cloud environments, workloads and sensitive data across modern infrastructure.",
   "fullDescription": "Comprehensive security posture management (CSPM) and cloud workload protection (CWPP) across multi-cloud clusters (AWS, Azure, Google Cloud). SPECTRE DEFEND enforces zero-trust IAM least-privilege policies, monitors Kubernetes runtime deviations, and detects infrastructure-as-code configuration drifts before production deployments.",
-  "featuredImage": "/src/assets/images/about_3d_globe_1789575901855.jpg",
+  "featuredImage": "/assets/images/about_3d_globe_1789575901855.jpg",
   "icon": "CloudCheck",
   "category": "Cloud",
   "order": 3,

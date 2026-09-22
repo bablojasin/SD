@@ -3,7 +3,7 @@
   "slug": "threat-detection",
   "shortDescription": "Identify suspicious activity quickly and respond before threats escalate.",
   "fullDescription": "SPECTRE DEFEND Threat Detection & Response combines sub-second behavioral telemetry with autonomous heuristic isolation. Our machine-learning engines continuously analyze millions of operating system events, memory allocations, and network sockets to detect advanced persistent threats (APTs), zero-day ransomware, and polymorphic adversaries before lateral movement occurs.",
-  "featuredImage": "/src/assets/images/soc_war_room_1789575925158.jpg",
+  "featuredImage": "/assets/images/soc_war_room_1789575925158.jpg",
   "icon": "ShieldAlert",
   "category": "Detection",
   "order": 1,

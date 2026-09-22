@@ -1,12 +1,12 @@
 import { ServiceItem, TestimonialItem, BlogPostItem } from '../types';
 
-export const HERO_IMAGE = '/src/assets/images/hero_3d_shield_1789575889590.jpg';
-export const HERO_CYBER_SHIELD = '/src/assets/images/hero_cyber_defense_shield_1789577844799.jpg';
-export const ABOUT_GLOBE_IMAGE = '/src/assets/images/about_3d_globe_1789575901855.jpg';
-export const CTA_MAIL_IMAGE = '/src/assets/images/cta_3d_mail_shield_1789575913648.jpg';
-export const SOC_ROOM_IMAGE = '/src/assets/images/soc_war_room_1789575925158.jpg';
-export const ANALYST_DESK_IMAGE = '/src/assets/images/cyber_analyst_desk_1789575942605.jpg';
-export const SERVER_RACK_IMAGE = '/src/assets/images/server_security_rack_1789575952898.jpg';
+export const HERO_IMAGE = '/assets/images/hero_3d_shield_1789575889590.jpg';
+export const HERO_CYBER_SHIELD = '/assets/images/hero_cyber_defense_shield_1789577844799.jpg';
+export const ABOUT_GLOBE_IMAGE = '/assets/images/about_3d_globe_1789575901855.jpg';
+export const CTA_MAIL_IMAGE = '/assets/images/cta_3d_mail_shield_1789575913648.jpg';
+export const SOC_ROOM_IMAGE = '/assets/images/soc_war_room_1789575925158.jpg';
+export const ANALYST_DESK_IMAGE = '/assets/images/cyber_analyst_desk_1789575942605.jpg';
+export const SERVER_RACK_IMAGE = '/assets/images/server_security_rack_1789575952898.jpg';
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
@@ -19,7 +19,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Continuous telemetry and algorithmic anomaly detection to isolate malicious vectors in real time, preventing lateral movement and eliminating threats before business disruption.',
     iconName: 'ShieldAlert',
     icon: 'ShieldAlert',
-    featuredImage: '/src/assets/images/services_threat_detection_1789575924765.jpg',
+    featuredImage: '/assets/images/services_threat_detection_1789575924765.jpg',
     category: 'SecOps',
     order: 1,
     isFeatured: true,
@@ -36,7 +36,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Defend distributed networks with deep layer-7 packet inspection, TLS cryptographic verification, and microsegmented zero-trust security perimeters.',
     iconName: 'Network',
     icon: 'Network',
-    featuredImage: '/src/assets/images/hero_cyber_defense_shield_1789577844799.jpg',
+    featuredImage: '/assets/images/hero_cyber_defense_shield_1789577844799.jpg',
     category: 'Infrastructure',
     order: 2,
     isFeatured: false,
@@ -53,7 +53,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Comprehensive posture management and workload protection across multi-cloud environments, enforcing IAM least-privilege policies and runtime container security.',
     iconName: 'CloudCheck',
     icon: 'Cloud',
-    featuredImage: '/src/assets/images/server_security_rack_1789575952898.jpg',
+    featuredImage: '/assets/images/server_security_rack_1789575952898.jpg',
     category: 'Cloud',
     order: 3,
     isFeatured: true,
@@ -70,7 +70,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Continuous scanning and risk quantification across internal infrastructure and external attack surfaces, prioritizing actionable fixes before adversaries can weaponize exploits.',
     iconName: 'ScanEye',
     icon: 'ScanEye',
-    featuredImage: '/src/assets/images/cyber_analyst_desk_1789575942605.jpg',
+    featuredImage: '/assets/images/cyber_analyst_desk_1789575942605.jpg',
     category: 'Auditing',
     order: 4,
     isFeatured: false,
@@ -87,7 +87,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Elite offensive security engineering emulating advanced adversarial tactics, techniques, and procedures (TTPs) to test organizational resilience.',
     iconName: 'Flame',
     icon: 'Flame',
-    featuredImage: '/src/assets/images/hero_3d_shield_1789575889590.jpg',
+    featuredImage: '/assets/images/hero_3d_shield_1789575889590.jpg',
     category: 'Offensive',
     order: 5,
     isFeatured: false,
@@ -104,7 +104,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: '24/7 autonomous SOC monitoring combining machine intelligence with expert cyber analysts to maintain vigilance over endpoints, servers, and cloud workloads.',
     iconName: 'Laptop',
     icon: 'Laptop',
-    featuredImage: '/src/assets/images/soc_war_room_1789575925158.jpg',
+    featuredImage: '/assets/images/soc_war_room_1789575925158.jpg',
     category: 'Operations',
     order: 6,
     isFeatured: false,

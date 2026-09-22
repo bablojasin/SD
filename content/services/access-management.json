@@ -3,7 +3,7 @@
   "slug": "access-management",
   "shortDescription": "Continuous cryptographic identity verification and adaptive least-privilege enforcement.",
   "fullDescription": "Eliminate static passwords and blind network trust with adaptive, context-aware identity verification. Every user request is evaluated against device health, biometric assurance, network posture, and temporal telemetry before granting just-in-time microsegmented access.",
-  "featuredImage": "/src/assets/images/server_security_rack_1789575952898.jpg",
+  "featuredImage": "/assets/images/server_security_rack_1789575952898.jpg",
   "icon": "Lock",
   "category": "Identity",
   "order": 8,

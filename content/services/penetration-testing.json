@@ -3,7 +3,7 @@
   "slug": "penetration-testing",
   "shortDescription": "Simulate real-world attacks to uncover exploitable security weaknesses.",
   "fullDescription": "Elite adversary emulation conducted by certified ethical hackers and former national security specialists. SPECTRE DEFEND tests organizational defenses against advanced persistent threats (APTs), social engineering attacks, physical breaches, and complex multi-stage lateral infiltration paths.",
-  "featuredImage": "/src/assets/images/soc_war_room_1789575925158.jpg",
+  "featuredImage": "/assets/images/soc_war_room_1789575925158.jpg",
   "icon": "Flame",
   "category": "Offensive Security",
   "order": 5,

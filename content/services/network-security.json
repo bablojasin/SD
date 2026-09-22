@@ -3,7 +3,7 @@
   "slug": "network-security",
   "shortDescription": "Protect networks, endpoints and critical infrastructure from unauthorized access.",
   "fullDescription": "Defend distributed networks with deep layer-7 packet inspection, TLS 1.3 cryptographic verification, and microsegmented zero-trust security perimeters. SPECTRE DEFEND insulates on-premise hardware, SD-WAN fabrics, and hybrid cloud backbones against lateral intrusion, automated credential stuffing, and high-volume volumetric DDoS assaults.",
-  "featuredImage": "/src/assets/images/server_security_rack_1789575952898.jpg",
+  "featuredImage": "/assets/images/server_security_rack_1789575952898.jpg",
   "icon": "Network",
   "category": "Infrastructure",
   "order": 2,
