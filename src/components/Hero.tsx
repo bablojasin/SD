@@ -219,10 +219,10 @@ export const Hero: React.FC<HeroProps> = ({ onStartProtection, onSelectService }
                 <div className="flex items-start justify-between">
                   <div>
                     <div className="text-3xl sm:text-4xl font-extrabold text-[#FFFFFF] tracking-tight font-sans leading-none">
-                      {hero.statsNumber || '20K+'}
+                      {hero.statsNumber || 'Continuous'}
                     </div>
                     <div className="text-[10px] sm:text-[11px] text-[#9AA39A] font-semibold tracking-[0.22em] uppercase font-mono mt-1">
-                      {hero.statsLabel || 'PROTECTED ASSETS'}
+                      {hero.statsLabel || 'DEFENSE VIGILANCE'}
                     </div>
                   </div>
 

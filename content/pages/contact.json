@@ -3,19 +3,15 @@
   "heading": "Initiate Secure Communications",
   "description": "Engage our global incident response commanders or schedule a confidential threat briefing with our principal defense architects.",
   "responseSLA": "Rapid Incident Triage For Active Breaches • 24-Hour Standard Inquiries",
-  "phone": "[REQUIRES BUSINESS CONFIRMATION]",
-  "emergencyPhone": "[REQUIRES BUSINESS CONFIRMATION]",
-  "email": "incident-response@spectredefend.com",
-  "generalEmail": "defense@spectredefend.com",
+  "phone": "REQUIRES BUSINESS CONFIRMATION",
+  "emergencyPhone": "REQUIRES BUSINESS CONFIRMATION",
+  "email": "REQUIRES BUSINESS CONFIRMATION",
+  "generalEmail": "REQUIRES BUSINESS CONFIRMATION",
   "headquarters": {
-    "city": "[REQUIRES BUSINESS CONFIRMATION]",
-    "address": "[REQUIRES BUSINESS CONFIRMATION]"
+    "city": "REQUIRES BUSINESS CONFIRMATION",
+    "address": "REQUIRES BUSINESS CONFIRMATION"
   },
-  "regionalCenters": [
-    { "city": "London", "region": "EMEA Operations", "lead": "Mayfair Cyber Campus" },
-    { "city": "Singapore", "region": "APAC Sentinel Hub", "lead": "Marina Tech Tower" },
-    { "city": "Tokyo", "region": "East Asia SOC", "lead": "Chiyoda Cryptographic Center" }
-  ],
+  "regionalCenters": [],
   "faqs": [
     {
       "question": "What is the emergency response SLA target for active ransomware or intrusion incidents?",
@@ -29,7 +25,7 @@
     },
     {
       "question": "How can our engineering team request an API proof-of-concept trial?",
-      "answer": "Contact our solutions team via the contact form above or email defense@spectredefend.com to receive access tokens and sandbox cluster credentials for evaluation in your pre-production staging environment.",
+      "answer": "Contact our solutions team via the contact form above to receive access tokens and sandbox cluster credentials for evaluation in your pre-production staging environment.",
       "order": 3
     }
   ]

@@ -1,8 +1,8 @@
 footer_logo: "/assets/brand/spectre-defend-logo.svg"
 company_description: "SPECTRE DEFEND delivers autonomous zero-trust cyber defense, high-frequency threat isolation, and 24/7 sovereign SOC surveillance protecting modern enterprise infrastructure."
-contact_email: "defense@spectredefend.com"
-contact_phone: "+1 (800) 412-CYBER"
-address: "742 Evergreen SecOps Boulevard, Suite 500, San Francisco, CA 94107"
+contact_email: "REQUIRES BUSINESS CONFIRMATION"
+contact_phone: "REQUIRES BUSINESS CONFIRMATION"
+address: "REQUIRES BUSINESS CONFIRMATION"
 
 quick_links:
   - label: "About Us"
@@ -35,9 +35,11 @@ legal_links:
     href: "/privacy"
   - label: "Terms of Service"
     href: "/terms"
+  - label: "Refund Policy"
+    href: "/refund-policy"
   - label: "Cookie Policy"
-    href: "/cookies"
+    href: "/cookie-policy"
   - label: "Decap CMS Portal"
     href: "/admin/"
 
-copyright: "© 2026 SPECTRE DEFEND All rights reserved. Zero-Trust Autonomous Sentinel Architecture."
+copyright: "© 2026 SPECTRE DEFEND. All rights reserved."

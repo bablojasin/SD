@@ -113,38 +113,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
 ];
 
-export const TESTIMONIALS_DATA: TestimonialItem[] = [
-  {
-    id: '1',
-    name: 'Alex Morgan',
-    role: 'Technology Director',
-    company: 'FinTech Global Systems',
-    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
-    quote: 'SPECTRE DEFEND gave our team greater visibility across our infrastructure and helped us respond to suspicious activity much faster. Their approach to security feels proactive rather than reactive.',
-    rating: 5,
-    highlightMetric: 'Zero Security Breaches',
-  },
-  {
-    id: '2',
-    name: 'Marcus Vance',
-    role: 'VP of Infrastructure & Security',
-    company: 'Apex Global Networks',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-    quote: 'Deploying SPECTRE DEFEND was transformative. We gained instantaneous perimeter telemetry and seamless zero-trust enforcement across our entire cloud architecture with zero operational downtime.',
-    rating: 5,
-    highlightMetric: '99.99% Threat Interception',
-  },
-  {
-    id: '3',
-    name: 'Elena Rostova',
-    role: 'Head of Cyber Defense Operations',
-    company: 'NovaCloud Enterprise',
-    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
-    quote: 'The autonomous containment capabilities are extraordinary. SPECTRE DEFEND insulates our mission-critical nodes from ransomware and zero-day exploits in milliseconds.',
-    rating: 5,
-    highlightMetric: '<12ms Quarantine Latency',
-  },
-];
+export const TESTIMONIALS_DATA: TestimonialItem[] = [];
 
 export const BLOG_POSTS: BlogPostItem[] = [
   {

@@ -8,6 +8,8 @@ export const TestimonialsSection: React.FC = () => {
   const homeData = getHomePageContent();
   const sectionContent = homeData.testimonialsSection;
 
+  // STRICT COMPLIANCE: Do not display unverified reviews or testimonials.
+  // Return null if empty or if testimonials lack documented client authorization.
   if (!testimonials || testimonials.length === 0) return null;
 
   const prevTestimonial = () => {

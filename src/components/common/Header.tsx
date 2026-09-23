@@ -343,12 +343,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenScanner }) => {
                   <Phone className="w-3.5 h-3.5 text-[#B7FF00]" />
                   <span>24/7 Red Team Hotline:</span>
                 </div>
-                <a
-                  href={`tel:${siteSettings.contactPhone.replace(/[^0-9+]/g, '')}`}
-                  className="text-[#FFFFFF] hover:text-[#B7FF00] font-bold"
-                >
-                  {siteSettings.contactPhone}
-                </a>
+                {siteSettings.contactPhone && !siteSettings.contactPhone.includes('CONFIRMATION') ? (
+                  <a
+                    href={`tel:${siteSettings.contactPhone.replace(/[^0-9+]/g, '')}`}
+                    className="text-[#FFFFFF] hover:text-[#B7FF00] font-bold"
+                  >
+                    {siteSettings.contactPhone}
+                  </a>
+                ) : (
+                  <span className="text-[#9AA39A]">
+                    {siteSettings.contactPhone || 'REQUIRES BUSINESS CONFIRMATION'}
+                  </span>
+                )}
               </div>
             </div>
 

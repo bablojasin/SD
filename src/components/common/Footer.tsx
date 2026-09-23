@@ -123,19 +123,27 @@ export const Footer: React.FC<FooterProps> = () => {
             <ul className="space-y-3 text-xs sm:text-sm text-[#9AA39A]">
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#B7FF00] shrink-0" />
-                <a href={`mailto:${siteSettings.contactEmail}`} className="text-[#E9ECE8] hover:text-[#B7FF00] transition-colors">
-                  {siteSettings.contactEmail}
-                </a>
+                {siteSettings.contactEmail && !siteSettings.contactEmail.includes('CONFIRMATION') ? (
+                  <a href={`mailto:${siteSettings.contactEmail}`} className="text-[#E9ECE8] hover:text-[#B7FF00] transition-colors">
+                    {siteSettings.contactEmail}
+                  </a>
+                ) : (
+                  <span className="text-[#E9ECE8]">{siteSettings.contactEmail || 'REQUIRES BUSINESS CONFIRMATION'}</span>
+                )}
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#B7FF00] shrink-0" />
-                <a href={`tel:${siteSettings.contactPhone.replace(/[^0-9+]/g, '')}`} className="text-[#E9ECE8] hover:text-[#B7FF00] transition-colors">
-                  {siteSettings.contactPhone}
-                </a>
+                {siteSettings.contactPhone && !siteSettings.contactPhone.includes('CONFIRMATION') ? (
+                  <a href={`tel:${siteSettings.contactPhone.replace(/[^0-9+]/g, '')}`} className="text-[#E9ECE8] hover:text-[#B7FF00] transition-colors">
+                    {siteSettings.contactPhone}
+                  </a>
+                ) : (
+                  <span className="text-[#E9ECE8]">{siteSettings.contactPhone || 'REQUIRES BUSINESS CONFIRMATION'}</span>
+                )}
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#B7FF00] shrink-0 mt-0.5" />
-                <span className="text-[#E9ECE8]">{siteSettings.address}</span>
+                <span className="text-[#E9ECE8]">{siteSettings.address || 'REQUIRES BUSINESS CONFIRMATION'}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Headphones className="w-4 h-4 text-[#B7FF00] shrink-0" />

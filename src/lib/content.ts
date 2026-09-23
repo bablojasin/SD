@@ -45,9 +45,9 @@ const defaultSiteSettings: SiteSettings = {
   logoImage: '/logo.svg',
   favicon: '/favicon.svg',
   appleTouchIcon: '/apple-touch-icon.svg',
-  contactEmail: 'defense@spectredefend.com',
-  contactPhone: '[REQUIRES BUSINESS CONFIRMATION]',
-  address: '[REQUIRES BUSINESS CONFIRMATION]',
+  contactEmail: 'REQUIRES BUSINESS CONFIRMATION',
+  contactPhone: 'REQUIRES BUSINESS CONFIRMATION',
+  address: 'REQUIRES BUSINESS CONFIRMATION',
   socialLinks: {
     twitter: 'https://twitter.com/spectredefend',
     github: 'https://github.com/spectredefend',
@@ -141,24 +141,32 @@ export function getSEO(): SEOConfig {
 // Company Info for contact / legal / cards
 export function getBusinessInfo(): import('../types').BusinessInfo {
   const fromFile = siteFiles['/content/site/business.json'];
-  if (fromFile) return fromFile;
+  if (fromFile) {
+    return {
+      ...fromFile,
+      email: fromFile.contactEmail || fromFile.email || 'REQUIRES BUSINESS CONFIRMATION',
+    };
+  }
 
   return {
-    legalName: '[REQUIRES BUSINESS CONFIRMATION]',
+    legalName: 'REQUIRES BUSINESS CONFIRMATION',
     tradingName: 'SPECTRE DEFEND',
-    businessAddress: '[REQUIRES BUSINESS CONFIRMATION]',
-    country: '[REQUIRES BUSINESS CONFIRMATION]',
-    city: '[REQUIRES BUSINESS CONFIRMATION]',
-    email: 'defense@spectredefend.com',
-    phone: '[REQUIRES BUSINESS CONFIRMATION]',
-    whatsapp: '[REQUIRES BUSINESS CONFIRMATION]',
+    businessType: 'REQUIRES BUSINESS CONFIRMATION',
+    country: 'REQUIRES BUSINESS CONFIRMATION',
+    province: 'REQUIRES BUSINESS CONFIRMATION',
+    city: 'REQUIRES BUSINESS CONFIRMATION',
+    businessAddress: 'REQUIRES BUSINESS CONFIRMATION',
+    registrationNumber: 'REQUIRES BUSINESS CONFIRMATION',
+    taxNumber: 'REQUIRES BUSINESS CONFIRMATION',
+    taxId: 'REQUIRES BUSINESS CONFIRMATION',
+    contactEmail: 'REQUIRES BUSINESS CONFIRMATION',
+    email: 'REQUIRES BUSINESS CONFIRMATION',
+    privacyEmail: 'REQUIRES BUSINESS CONFIRMATION',
+    legalEmail: 'REQUIRES BUSINESS CONFIRMATION',
+    supportEmail: 'REQUIRES BUSINESS CONFIRMATION',
+    phone: 'REQUIRES BUSINESS CONFIRMATION',
+    whatsapp: 'REQUIRES BUSINESS CONFIRMATION',
     website: 'https://SpectreDefend.dpdns.org',
-    privacyEmail: 'privacy@spectredefend.com',
-    legalEmail: 'legal@spectredefend.com',
-    supportEmail: 'support@spectredefend.com',
-    registrationNumber: '[REQUIRES BUSINESS CONFIRMATION]',
-    taxId: '[REQUIRES BUSINESS CONFIRMATION]',
-    operatingHours: '24/7 Security Operations Telemetry',
   };
 }
 
@@ -292,13 +300,13 @@ export function getContactPageContent(): ContactPageContent {
     heading: 'Initiate Secure Communications',
     description: 'Engage our global incident response commanders or schedule a confidential threat briefing with our principal defense architects.',
     responseSLA: 'Rapid Incident Triage For Active Breaches • 24-Hour Standard Inquiries',
-    phone: '[REQUIRES BUSINESS CONFIRMATION]',
-    emergencyPhone: '[REQUIRES BUSINESS CONFIRMATION]',
-    email: 'incident-response@spectredefend.com',
-    generalEmail: 'defense@spectredefend.com',
+    phone: 'REQUIRES BUSINESS CONFIRMATION',
+    emergencyPhone: 'REQUIRES BUSINESS CONFIRMATION',
+    email: 'REQUIRES BUSINESS CONFIRMATION',
+    generalEmail: 'REQUIRES BUSINESS CONFIRMATION',
     headquarters: {
-      city: '[REQUIRES BUSINESS CONFIRMATION]',
-      address: '[REQUIRES BUSINESS CONFIRMATION]',
+      city: 'REQUIRES BUSINESS CONFIRMATION',
+      address: 'REQUIRES BUSINESS CONFIRMATION',
     },
     regionalCenters: [
       { city: 'London', region: 'EMEA Operations', lead: 'Mayfair Cyber Campus' },

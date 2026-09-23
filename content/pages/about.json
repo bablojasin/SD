@@ -6,8 +6,8 @@
   "heroImage": "/assets/images/about_3d_globe_1789575901855.jpg",
   "doctrineHeading": "Our Security Doctrine: Zero Trust, Zero Compromise",
   "story": "Founded by cybersecurity research fellows and former intelligence operatives, SPECTRE DEFEND was born out of an urgent realization: perimeter-based security is obsolete. Modern adversaries utilize AI-driven polymorphism, credential harvesting, and cloud misconfigurations to breach networks in seconds. SPECTRE DEFEND replaces reactive defense with continuous, mathematical zero-trust verification.",
-  "mission": "To eradicate digital extortion and unauthorized intrusion by providing autonomous, impenetrable cyber defense systems that protect organizations worldwide.",
-  "vision": "A digitally sovereign world where critical infrastructure, enterprise data, and human privacy remain unassailable against cyber warfare.",
+  "mission": "To reduce digital risk and prevent unauthorized intrusion by delivering resilient, engineered cyber defense systems that protect organizations worldwide.",
+  "vision": "A digitally secure environment where critical infrastructure, enterprise data, and digital workflows remain defended against modern adversarial campaigns.",
   "values": [
     {
       "title": "Continuous Verification",
@@ -45,13 +45,13 @@
       "order": 1
     },
     {
-      "question": "Where are SPECTRE DEFEND's security researchers and command centers located?",
-      "answer": "SPECTRE DEFEND operates primary sovereign Security Operations Centers in San Francisco, London, Singapore, and Tokyo, providing uninterrupted follow-the-sun continuous threat hunting and intelligence collation.",
+      "question": "How are SPECTRE DEFEND's security research and operations delivered?",
+      "answer": "SPECTRE DEFEND coordinates follow-the-sun continuous monitoring, threat research, and distributed cloud incident triage to provide uninterrupted SecOps response.",
       "order": 2
     },
     {
-      "question": "Does SPECTRE DEFEND conduct third-party external penetration tests and audits?",
-      "answer": "Yes. SPECTRE DEFEND undergoes biannual independent third-party audits and adversarial penetration testing from accredited CREST-certified laboratories.",
+      "question": "Does SPECTRE DEFEND conduct external evaluations and security audits?",
+      "answer": "Yes. SPECTRE DEFEND validates security controls through structured third-party methodology alignment and regular internal adversarial penetration testing.",
       "order": 3
     }
   ]

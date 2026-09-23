@@ -68,7 +68,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
 
                 <div className="absolute bottom-4 left-4 right-4 bg-[#0A0F0A]/90 backdrop-blur-md border border-white/10 p-2.5 rounded-xl flex items-center justify-between text-xs font-mono">
                   <span className="text-[#9AA39A]">Threat Vectors Analyzed</span>
-                  <span className="text-[#B7FF00] font-bold">142M+ / Day</span>
+                  <span className="text-[#B7FF00] font-bold">Multi-Layer Heuristics</span>
                 </div>
               </div>
             </div>

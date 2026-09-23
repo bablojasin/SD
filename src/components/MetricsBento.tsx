@@ -92,13 +92,13 @@ export const MetricsBento: React.FC = () => {
 
             <div className="mt-8">
               <div className="text-xs text-[#9AA39A] font-medium tracking-wide uppercase font-mono">
-                Enterprises Protected
+                Security Architecture
               </div>
-              <div className="text-4xl sm:text-5xl font-bold text-[#FFFFFF] tracking-tight mt-1 font-mono">
-                500+
+              <div className="text-3xl sm:text-4xl font-bold text-[#FFFFFF] tracking-tight mt-1 font-mono">
+                Multi-Layer
               </div>
               <p className="text-xs text-[#9AA39A] mt-2 leading-relaxed">
-                Across financial rails, sovereign clouds, defense aerospace, and critical digital infrastructure.
+                Engineered for distributed clouds, enterprise environments, and mission-critical digital infrastructure.
               </p>
             </div>
           </div>
@@ -165,22 +165,22 @@ export const MetricsBento: React.FC = () => {
 
             <div className="mt-8">
               <div className="text-xs text-[#9AA39A] font-medium tracking-wide uppercase font-mono">
-                Threat Detection Rate
+                Threat Mitigation
               </div>
-              <div className="text-4xl sm:text-5xl font-bold text-[#FFFFFF] tracking-tight mt-1 font-mono">
-                97.00%
+              <div className="text-3xl sm:text-4xl font-bold text-[#FFFFFF] tracking-tight mt-1 font-mono">
+                Proactive
               </div>
               <p className="text-xs text-[#9AA39A] mt-2 leading-relaxed">
-                Validated MITRE ATT&CK benchmark across polymorphic adversarial malware and evasive payloads.
+                Adversarial tactics mapped directly to the MITRE ATT&CK framework for deep behavioral detection.
               </p>
             </div>
           </div>
 
-          {/* Card 5: 48+ Companies Of Secured Safe with Avatars */}
+          {/* Card 5: Infrastructure Sectors Covered */}
           <div className="lg:col-span-4 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.055] via-[#172512]/30 to-[#0A0F0A] p-6 flex flex-col justify-between shadow-xl backdrop-blur-xl">
             <div>
               {/* Stacked enterprise sector badges */}
-              <div className="flex items-center -space-x-2.5 mb-6" aria-label="Protected Infrastructure Sectors">
+              <div className="flex items-center -space-x-2.5 mb-6" aria-label="Target Infrastructure Sectors">
                 <div className="w-10 h-10 rounded-full border-2 border-[#050807] bg-[#172512] text-[#B7FF00] flex items-center justify-center text-xs font-mono font-bold shadow-md">
                   FIN
                 </div>
@@ -188,18 +188,18 @@ export const MetricsBento: React.FC = () => {
                   CLD
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-[#050807] bg-[#1E122A] text-[#C084FC] flex items-center justify-center text-xs font-mono font-bold shadow-md">
-                  AERO
+                  DEV
                 </div>
                 <div className="w-10 h-10 rounded-full bg-[#B7FF00] text-[#050807] border-2 border-[#050807] flex items-center justify-center text-xs font-bold font-mono">
-                  +45
+                  +SOC
                 </div>
               </div>
 
               <div className="text-2xl sm:text-3xl font-bold text-[#FFFFFF] tracking-tight font-mono">
-                48+ Networks
+                Sector-Agnostic
               </div>
               <div className="text-xs text-[#9AA39A] uppercase tracking-wide font-medium mt-1 font-mono">
-                Sovereign Infrastructure Defended
+                Enterprise Infrastructure Hardened
               </div>
             </div>
 
@@ -209,7 +209,7 @@ export const MetricsBento: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 6: 03. Attacks Blocked 20M+ */}
+          {/* Card 6: Threat Interception */}
           <div className="lg:col-span-4 rounded-3xl border border-white/10 bg-white/[0.055] p-6 flex flex-col justify-between shadow-xl backdrop-blur-xl hover:border-[#B7FF00]/30 transition-all">
             <div className="flex items-start justify-between">
               <div className="w-10 h-10 rounded-full bg-[#B7FF00] text-[#050807] flex items-center justify-center shadow-lg shadow-[#B7FF00]/20 font-bold">
@@ -220,13 +220,13 @@ export const MetricsBento: React.FC = () => {
 
             <div className="mt-8">
               <div className="text-xs text-[#9AA39A] font-medium tracking-wide uppercase font-mono">
-                Attacks Neutralized
+                Threat Quarantine
               </div>
-              <div className="text-4xl sm:text-5xl font-bold text-[#FFFFFF] tracking-tight mt-1 font-mono">
-                20M+
+              <div className="text-3xl sm:text-4xl font-bold text-[#FFFFFF] tracking-tight mt-1 font-mono">
+                Real-Time
               </div>
               <p className="text-xs text-[#9AA39A] mt-2 leading-relaxed">
-                Autonomous threat telemetry neutralizing ransomware, volumetric DDoS botnets, and zero-day breaches.
+                Autonomous threat telemetry isolating ransomware vectors, suspicious egress sockets, and zero-day breaches.
               </p>
             </div>
           </div>

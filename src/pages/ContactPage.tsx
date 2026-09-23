@@ -151,15 +151,21 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
           <div className="flex items-center gap-3 text-rose-300">
             <AlertTriangle className="w-5 h-5 text-rose-400 shrink-0" />
             <span className="text-xs sm:text-sm font-mono">
-              <strong>ACTIVE BREACH IN PROGRESS?</strong> Call our 24/7 Red Team Emergency Incident Response Line immediately.
+              <strong>ACTIVE BREACH IN PROGRESS?</strong> Transmit an urgent inquiry below or engage our 24/7 Red Team Emergency Incident Response Line.
             </span>
           </div>
-          <a
-            href={`tel:${company.emergencyPhone?.replace(/[^0-9+]/g, '') || '+18004122923'}`}
-            className="shrink-0 bg-rose-600 hover:bg-rose-500 text-white font-mono font-bold text-xs px-4 py-2 rounded-full transition-all cursor-pointer"
-          >
-            {company.emergencyPhone || '+1 (800) 412-CYBER'} [Priority Line]
-          </a>
+          {company.emergencyPhone && !company.emergencyPhone.includes('CONFIRMATION') ? (
+            <a
+              href={`tel:${company.emergencyPhone.replace(/[^0-9+]/g, '')}`}
+              className="shrink-0 bg-rose-600 hover:bg-rose-500 text-white font-mono font-bold text-xs px-4 py-2 rounded-full transition-all cursor-pointer"
+            >
+              {company.emergencyPhone} [Priority Line]
+            </a>
+          ) : (
+            <span className="shrink-0 bg-rose-900/60 border border-rose-500/40 text-rose-200 font-mono text-xs px-4 py-2 rounded-full">
+              Emergency Hotline: REQUIRES BUSINESS CONFIRMATION
+            </span>
+          )}
         </div>
 
         {/* 2-Column: Details on Left, Form on Right */}
@@ -181,9 +187,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-[#FFFFFF]">Direct Operations Desk</h4>
-                  <a href={`tel:${siteSettings.contactPhone || company.phone}`} className="text-xs text-[#E9ECE8] mt-0.5 hover:text-[#B7FF00] block">
-                    {siteSettings.contactPhone || company.phone}
-                  </a>
+                  {siteSettings.contactPhone && !siteSettings.contactPhone.includes('CONFIRMATION') ? (
+                    <a href={`tel:${siteSettings.contactPhone.replace(/[^0-9+]/g, '')}`} className="text-xs text-[#E9ECE8] mt-0.5 hover:text-[#B7FF00] block">
+                      {siteSettings.contactPhone}
+                    </a>
+                  ) : (
+                    <span className="text-xs text-[#E9ECE8] mt-0.5 block">
+                      {siteSettings.contactPhone || 'REQUIRES BUSINESS CONFIRMATION'}
+                    </span>
+                  )}
                   <p className="text-[11px] font-mono text-[#9AA39A]">{company.businessHours || '24/7 Global Surveillance'}</p>
                 </div>
               </GlassCard>
@@ -194,9 +206,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-[#FFFFFF]">Encrypted Dispatch</h4>
-                  <a href={`mailto:${siteSettings.contactEmail || company.email}`} className="text-xs text-[#E9ECE8] mt-0.5 hover:text-[#B7FF00] block">
-                    {siteSettings.contactEmail || company.email}
-                  </a>
+                  {siteSettings.contactEmail && !siteSettings.contactEmail.includes('CONFIRMATION') ? (
+                    <a href={`mailto:${siteSettings.contactEmail}`} className="text-xs text-[#E9ECE8] mt-0.5 hover:text-[#B7FF00] block">
+                      {siteSettings.contactEmail}
+                    </a>
+                  ) : (
+                    <span className="text-xs text-[#E9ECE8] mt-0.5 block">
+                      {siteSettings.contactEmail || 'REQUIRES BUSINESS CONFIRMATION'}
+                    </span>
+                  )}
                   <p className="text-[11px] font-mono text-[#9AA39A]">PGP Key ID: {company.pgpKeyId || '0x9B22C44F'}</p>
                 </div>
               </GlassCard>
@@ -207,7 +225,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-[#FFFFFF]">Global Headquarters</h4>
-                  <p className="text-xs text-[#E9ECE8] mt-0.5">{siteSettings.address || company.address}</p>
+                  <p className="text-xs text-[#E9ECE8] mt-0.5">{siteSettings.address || company.address || 'REQUIRES BUSINESS CONFIRMATION'}</p>
                   <p className="text-[11px] font-mono text-[#9AA39A]">SCIF Facility Level 4 Access</p>
                 </div>
               </GlassCard>

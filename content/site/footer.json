@@ -1,9 +1,9 @@
 {
   "footerLogo": "/logo.svg",
   "companyDescription": "SPECTRE DEFEND delivers autonomous zero-trust cyber defense, high-frequency threat isolation, and 24/7 sovereign SOC surveillance protecting modern enterprise infrastructure.",
-  "contactEmail": "defense@spectredefend.com",
-  "contactPhone": "[REQUIRES BUSINESS CONFIRMATION]",
-  "address": "[REQUIRES BUSINESS CONFIRMATION]",
+  "contactEmail": "REQUIRES BUSINESS CONFIRMATION",
+  "contactPhone": "REQUIRES BUSINESS CONFIRMATION",
+  "address": "REQUIRES BUSINESS CONFIRMATION",
   "quickLinks": [
     { "label": "About Us", "href": "/about" },
     { "label": "Our Services", "href": "/services" },
