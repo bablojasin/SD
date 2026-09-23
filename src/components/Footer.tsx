@@ -148,20 +148,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenScanner }) => 
             </h4>
             <ul className="space-y-3 text-xs sm:text-sm text-zinc-400">
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#B8F526] shrink-0" />
-                <span>+1 123 456 7890</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#B8F526] shrink-0 mt-0.5" />
-                <span>421 Cyber Way, Austin, TX 78701</span>
-              </li>
-              <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#B8F526] shrink-0" />
-                <span>support@spectredefend.com</span>
+                <span>Contact via SecOps Consultation Portal</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Globe className="w-4 h-4 text-[#B8F526] shrink-0" />
-                <span>spectredefend.com</span>
+                <span>SpectreDefend.dpdns.org</span>
               </li>
             </ul>
           </div>

@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://unpkg.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://SpectreDefend.dpdns.org https://api.github.com https://unpkg.com https://*.workers.dev; frame-src 'self' https://github.com; base-uri 'self'; form-action 'self';" />
     <title>SPECTRE DEFEND Content Management Portal • Decap CMS</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style>
@@ -35,8 +39,8 @@
     <div id="cms-auth-notice">
       [SECOPS PORTAL] Authenticated GitHub Session • Decap CMS v3.3.3 • Direct Repository Synchronization
     </div>
-    <!-- Decap CMS official script -->
-    <script src="https://unpkg.com/decap-cms@^3.3.3/dist/decap-cms.js"></script>
+    <!-- Decap CMS official script (pinned exact version) -->
+    <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
     <script>
       // Display authenticated banner on initialization
       if (window.CMS) {

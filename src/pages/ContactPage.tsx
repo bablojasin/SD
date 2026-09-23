@@ -14,6 +14,9 @@ interface ContactPageProps {
 interface FormErrors {
   name?: string;
   email?: string;
+  phone?: string;
+  company?: string;
+  subject?: string;
   message?: string;
   consent?: string;
 }
@@ -44,10 +47,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
 
     if (!formData.name.trim()) {
       errs.name = 'Full name is required.';
+    } else if (formData.name.trim().length > 100) {
+      errs.name = 'Full name must not exceed 100 characters.';
     }
 
     if (!formData.email.trim()) {
       errs.email = 'Email address is required.';
+    } else if (formData.email.trim().length > 120) {
+      errs.email = 'Email address must not exceed 120 characters.';
     } else {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email.trim())) {
@@ -55,10 +62,24 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
       }
     }
 
+    if (formData.phone && formData.phone.trim().length > 30) {
+      errs.phone = 'Phone number must not exceed 30 characters.';
+    }
+
+    if (formData.company && formData.company.trim().length > 100) {
+      errs.company = 'Company name must not exceed 100 characters.';
+    }
+
+    if (formData.subject && formData.subject.trim().length > 100) {
+      errs.subject = 'Subject line must not exceed 100 characters.';
+    }
+
     if (!formData.message.trim()) {
       errs.message = 'Message / technical requirement scope is required.';
     } else if (formData.message.trim().length < 10) {
       errs.message = 'Message must be at least 10 characters detailing your security requirements.';
+    } else if (formData.message.trim().length > 5000) {
+      errs.message = 'Message must not exceed 5,000 characters.';
     }
 
     if (!consentGiven) {
@@ -89,7 +110,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name.trim().slice(0, 100),
+          email: formData.email.trim().slice(0, 120),
+          phone: formData.phone ? formData.phone.trim().slice(0, 30) : undefined,
+          company: formData.company ? formData.company.trim().slice(0, 100) : undefined,
+          subject: formData.subject ? formData.subject.trim().slice(0, 100) : undefined,
+          message: formData.message.trim().slice(0, 5000),
           timestamp: new Date().toISOString(),
         }),
       });
@@ -100,17 +126,20 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
         setDispatchId(generatedId);
         setSubmitted(true);
         if (onCtaSuccess) onCtaSuccess(formData.email);
+      } else if (response.status === 429) {
+        throw new Error('Rate limit exceeded. Please wait a few moments before sending another dispatch.');
       } else {
         const errData = await response.json().catch(() => ({}));
         throw new Error(
-          errData.message || `Contact endpoint returned HTTP ${response.status} (${response.statusText || 'Error'}).`
+          errData.error || errData.message || 'Unable to complete dispatch. Please verify your transmission details.'
         );
       }
     } catch (err: any) {
-      // Clear, informative error feedback if endpoint is not reachable
-      console.warn('Contact dispatch error:', err);
+      // Safe, non-sensitive user-facing error message (no stack trace or internal server path)
       setErrorMessage(
-        `Unable to reach contact endpoint (${contactEndpoint}): ${err.message || 'Network request failed'}. In production, ensure your Cloudflare Worker /contact endpoint is configured via VITE_CONTACT_ENDPOINT.`
+        err.message && !err.message.includes('object') && !err.message.includes('fetch')
+          ? err.message
+          : 'Unable to deliver security dispatch over secure gateway at this time. Please retry momentarily or engage our Security Operations Center via emergency phone.'
       );
     } finally {
       setIsSubmitting(false);
@@ -122,10 +151,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onCtaSuccess }) => {
       <SEO
         title="Contact SPECTRE DEFEND | Cybersecurity Consultation"
         description="Engage 24/7 Security Operations Center. Emergency incident response, security architecture audits, and zero-trust deployments."
-        canonicalUrl="https://spectredefend.com/contact"
+        canonicalUrl="https://SpectreDefend.dpdns.org/contact"
         breadcrumbs={[
-          { name: 'Home', url: 'https://spectredefend.com/' },
-          { name: 'Contact', url: 'https://spectredefend.com/contact' },
+          { name: 'Home', url: 'https://SpectreDefend.dpdns.org/' },
+          { name: 'Contact', url: 'https://SpectreDefend.dpdns.org/contact' },
         ]}
         faqs={contactContent.faqs}
       />

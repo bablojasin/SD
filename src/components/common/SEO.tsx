@@ -244,7 +244,8 @@ export const SEO: React.FC<SEOProps> = ({
       scriptTag.setAttribute('type', 'application/ld+json');
       document.head.appendChild(scriptTag);
     }
-    scriptTag.textContent = JSON.stringify(scriptsToAdd);
+    // Safely encode any '<' characters to prevent premature script tag termination (XSS defense)
+    scriptTag.textContent = JSON.stringify(scriptsToAdd).replace(/</g, '\\u003c');
   }, [
     finalTitle,
     finalDescription,

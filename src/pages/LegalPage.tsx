@@ -39,8 +39,8 @@ export const LegalPage: React.FC = () => {
         title={pageTitle}
         description={pageSummary}
         breadcrumbs={[
-          { name: 'Home', url: 'https://spectredefend.com/' },
-          { name: pageTitle, url: `https://spectredefend.com${location.pathname}` },
+          { name: 'Home', url: 'https://SpectreDefend.dpdns.org/' },
+          { name: pageTitle, url: `https://SpectreDefend.dpdns.org${location.pathname}` },
         ]}
       />
 

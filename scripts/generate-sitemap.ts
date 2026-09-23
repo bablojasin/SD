@@ -235,11 +235,27 @@ ${svc.deliverables && Array.isArray(svc.deliverables) ? `- Key Deliverables: ${s
     }
   }
 
+  // 7. Load contact details from content/site/settings.json
+  let contactEmail = 'REQUIRES BUSINESS CONFIRMATION';
+  let contactPhone = 'REQUIRES BUSINESS CONFIRMATION';
+  let address = 'REQUIRES BUSINESS CONFIRMATION';
+  const settingsPath = path.join(rootDir, 'content/site/settings.json');
+  if (fs.existsSync(settingsPath)) {
+    try {
+      const settingsData = JSON.parse(fs.readFileSync(settingsPath, 'utf-8'));
+      if (settingsData.contactEmail) contactEmail = settingsData.contactEmail;
+      if (settingsData.contactPhone) contactPhone = settingsData.contactPhone;
+      if (settingsData.address) address = settingsData.address;
+    } catch (e) {
+      // ignore
+    }
+  }
+
   llmsContent += `
 ## Direct Contact & SecOps Channels
-- Emergency SOC Dispatch: defense@spectredefend.com
-- Security Operations Center Phone: +1 (800) 412-CYBER
-- Corporate Headquarters: 742 Evergreen SecOps Boulevard, Suite 500, San Francisco, CA 94107
+- Emergency SOC Dispatch: ${contactEmail}
+- Security Operations Center Phone: ${contactPhone}
+- Corporate Headquarters: ${address}
 - Security Vulnerability Disclosure: ${siteUrl}/contact
 `;
 
